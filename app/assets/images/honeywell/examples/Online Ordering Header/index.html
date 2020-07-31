@@ -1,0 +1,149 @@
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<title>Header Gradient</title>
+<link rel="stylesheet" type="text/css" href="online_ordering_header.css">
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono|Oxygen' rel='stylesheet' type='text/css'>
+<style>
+body { padding: 20px; font: 14px/1.4em 'Oxygen', sans-serif; color: #454545; }
+h1 { font-size: 28px; font-family: 'Oswald', sans-serif; color: #ed2e24; clear: both; }
+h2 { font-size: 22px; font-family: 'Oswald', sans-serif; color: #000; clear: both; margin: 0; padding: 20px 0; }
+h3 { font-size: 20px; font-family: 'Oswald', sans-serif; color: #999; clear: both; padding: 20px 0; margin: 0; }
+table {  }
+td { padding: 1px 5px; font: 14px/1.4em 'Oxygen', sans-serif; color: #454545; }
+th { padding: 2px 5px; font: 14px/1.4em 'Oxygen', sans-serif; color: #454545; background-color: #eee; text-align: left; }
+td.image_bg{ background-image: url('Artifacts/image_bg.png'); }
+p.image_bg{ background-image: url('Artifacts/image_bg.png'); display: table; padding: 20px; }
+
+pre { background-color: #454545; padding: 5px 10px; clear: both; }
+code { font-family: 'Share Tech Mono', "Lucida Console"; color: #000; }
+pre code { font-family: 'Share Tech Mono', "Lucida Console"; color: #fff; }
+div.image div, td.image img { border: none !important;  }
+p, table, h1 { clear: both; }
+p, div { font: 14px/1.4em 'Oxygen', sans-serif; color: #454545; }
+</style>
+
+
+
+
+
+
+
+
+
+</style>
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+</head>
+
+<body>
+<h1>Online Ordering Header</h1>
+
+<h2>Header</h2>
+<h3>Final Output (Rendered in HTML)</h3>
+
+<ul class="online_ordering_header">
+	<li class="find_a_part">
+    	<h2>
+        	<div class="icon_help"></div>
+			<a href="/">Need Help?</a>
+    	</h2>
+        <h1>Find a Part:</h1>
+	</li>
+	<li class="choose_part_type">
+  		<h2>Choose Part Type:</h2>
+        <ul>
+        	<li><input type="checkbox" name="Choose Part Type" value="Purchase" id="ChoosePartType_0"><div class="icon_new"></div><label>Purchase</label></li>
+        	<li><input type="checkbox" name="ChoosePartType_" value="Exchange" id="ChoosePartType_1"><div class="icon_exchange"></div><label>Exchange</label></li>
+        	<li><input type="checkbox" name="ChoosePartType_" value="Repair" id="ChoosePartType_2"><div class="icon_repair"></div><label>Repair</label></li>
+        	<li><input type="checkbox" name="ChoosePartType_" value="Rental" id="ChoosePartType_3"><div class="icon_rental"></div><label>Rental</label></li>
+		</ul>
+	</li>
+	<li class="part_number">
+  		<h2>Part Number: <a href="">Search Multiple Parts</a></h2>
+    	<input type="text" /> 
+	</li>
+	<li class="quantity">
+		<h2>Quantity:</h2>
+    	<input type="text" /> 
+    </li>
+	<li class="search_button">
+	    <button class="search"><span>Search</span></button>
+    </li>
+	<li class="search_button">
+        <button class="start_over"><span>Start Over</span></button>
+    </li>
+</ul>
+
+<h3>Header Isolated</h3>
+
+<ul class="online_ordering_header">
+	<li class="find_a_part"></li>
+	<li class="choose_part_type"></li>
+	<li class="part_number"></li>
+	<li class="quantity"></li>
+	<li class="search_button"></li>
+	<li class="search_button"></li>
+</ul>
+<h3>Header Isolated Code</h3>
+<pre>
+<code>
+&lt;ul class=&quot;online_ordering_header&quot;&gt;
+    &lt;li class=&quot;find_a_part&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;choose_part_type&quot;&gt;&lt;/li&gt;    
+    &lt;li class=&quot;part_number&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;quantity&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;search_button&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;search_button&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;    
+</code>
+</pre>
+
+<h2>Image Sprites</h2>
+
+<table>
+<tr><th>Old Image</th><th>New Image From Sprite</th><th>Code</th><th>Width / Height</th></tr>
+<tr><td class="image_bg"><img src="Artifacts/icon_help.gif" /></td><td class="image_bg"><div class="icon_help"></div></td><td><pre><code>&lt;div class=&quot;icon_help&quot;&gt;&lt;/div&gt;</code></pre></td>
+<td>(16 &times; 16)</td><td></tr>
+<tr><td class="image_bg"><img src="Artifacts/icon_new.gif" /></td><td class="image_bg"><div class="icon_new"></div></td><td><pre><code>&lt;div class=&quot;icon_new&quot;&gt;&lt;/div&gt;</code></pre></td>
+<td>(16 &times; 16)</td><td></tr>
+<tr><td class="image_bg"><img src="Artifacts/icon_exchange.gif" /></td><td class="image_bg"><div class="icon_exchange"></div></td><td><pre><code>&lt;div class=&quot;icon_exchange&quot;&gt;&lt;/div&gt;</code></pre></td>
+<td>(16 &times; 16)</td><td></tr>
+<tr><td class="image_bg"><img src="Artifacts/icon_repair.gif" /></td><td class="image_bg"><div class="icon_repair"></div></td><td><pre><code>&lt;div class=&quot;icon_repair&quot;&gt;&lt;/div&gt;</code></pre></td>
+<td>(16 &times; 16)</td><td></tr>
+<tr><td class="image_bg"><img src="Artifacts/icon_rental.gif" /></td><td class="image_bg"><div class="icon_rental"></div></td><td><pre><code>&lt;div class=&quot;icon_rental&quot;&gt;&lt;/div&gt;</code></pre></td>
+<td>(16 &times; 16)</td><td></tr>
+<tr><td class="image_bg"><img src="Artifacts/search.png" width="111" height="30" /></td><td class="image_bg"><div class="search"></div></td><td><pre><code>&lt;div class=&quot;search&quot;&gt;&lt;span&gt;Search&lt;/span&gt;&lt;/div&gt;</code></pre></td>
+<td>(112 &times; 30)</td><td></tr>
+<tr><td class="image_bg"><img src="Artifacts/start_over.png" width="107" height="30" /></td><td class="image_bg"><div class="start_over"></div></td><td><pre><code>&lt;div class=&quot;start_over&quot;&gt;&lt;span&gt;Start Over&lt;/span&gt;&lt;/div&gt;</code></pre></td>
+<td>112 &times; 30)</td><td></tr>
+</table>
+
+
+
+<h3>Artifacts</h3>
+<p>Link to the: <a href="online_ordering_header.css">online_ordering_header.css</a></p>
+<p>Sprite:</p>
+<p>Image Sprite File Name: <a href="online_ordering_header_sprite.png">online_ordering_header_sprite.png</a> (9kb)</p>
+<p class="image_bg"><img src="online_ordering_header_sprite.png" width="112" height="80" /></p>
+
+<h3>Original Design for Reference</h3>
+<div style="width: 974px; height: 99px; background: url('Artifacts/bg_template.png') no-repeat top left;"></div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,316 @@
+.wrap {
+  position: relative;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.project {
+  width: 100%;
+  text-align: center;
+  clear: both;
+  position: relative;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  /*top: 2%; */
+  text-align: left;
+  &--small {
+    max-width: 800px;
+  }
+  &--medium {
+    max-width: 1024px;
+  }
+  &--large {
+    max-width: 1200px;
+  }
+  @mixin atMedium {
+    width: 1024px;
+  }
+  @mixin atLarge {
+    width: 1200px;
+  }
+}
+
+/**
+ * @page base-styles Base Styles
+ */
+
+/**
+ * A simple example.
+ *
+ * @page theme-styles Theme Styles
+ * <div class="dally-dally">
+ * 		<div class="logo">
+ * 			{/*
+<picture>
+ * 				<source sizes="250px" srcSet="assets/images/logo-sm.png 250w" media="(min-width: 1024px)">
+ * 				<source sizes="200px" srcSet="assets/images/logo-sm.png 200w" media="(min-width: 800px)">
+ * 				<img class="lazyload" data-srcSet="assets/images/logo-sm.png 150w" alt="logo">
+ * 			</picture>
+*/}
+ * 		</div>
+ * 		<div class="content">
+ * 			<h1 class="title">Project</h1>
+ * 			<h2 class="subtitle">
+ * 				<ul>
+ * 					<li><a href="" target="_blank">External Link</a></li>
+ * 					<li><a href="" target="_blank">External Link</a></li>
+ * 					<li><a href="" target="_blank">External Link</a></li>
+ * 				</ul>
+ * 			</h2>
+ * 			<h3 class="dates">Dates</h3>
+ * 			<h2 class="my-title">Title</h2>
+ * 			<p class="description"></p>
+ * 		</div>
+ * </div>
+ *
+ * @stylesheet
+ * <div class="dally-dally">
+ * 		<div class="logo">
+ * 			{/*
+<picture>
+ * 				<source sizes="250px" srcSet="assets/images/logo-sm.png 250w" media="(min-width: 1024px)">
+ * 				<source sizes="200px" srcSet="assets/images/logo-sm.png 200w" media="(min-width: 800px)">
+ * 				<img class="lazyload" data-srcSet="assets/images/logo-sm.png 150w" alt="logo">
+ * 			</picture>
+*/}
+ * 		</div>
+ * 		<div class="content">
+ * 			<h1 class="title">Project</h1>
+ * 			<h2 class="subtitle">
+ * 				<ul>
+ * 					<li><a href="" target="_blank">External Link</a></li>
+ * 					<li><a href="" target="_blank">External Link</a></li>
+ * 					<li><a href="" target="_blank">External Link</a></li>
+ * 				</ul>
+ * 			</h2>
+ * 			<h3 class="dates">Dates</h3>
+ * 			<h2 class="my-title">Title</h2>
+ * 			<p class="description"></p>
+ * 		</div>
+ * </div>
+ */
+
+/**
+ * Using the @ symbol in code
+ *
+ * @stylesheet
+ * 	.dally-dally {
+ * 		width: 100%;
+ * 		overflow: hidden;
+ * 		@mixin atSmall {
+ * 			width: 100%;
+ * 			overflow: hidden;
+ * 			float: none;
+ * 		}
+ * 		@mixin atMedium {
+ * 		width: 45%; 
+ * 		float: left;
+ * 		}
+ * 		@mixin atLarge {
+ * 			width: 45%;
+ * 			float: left;
+ * 		}
+ *	}
+ */
+
+.dally-dally {
+  width: 100%;
+  overflow: hidden;
+  @mixin atSmall {
+    width: 100%;
+    overflow: hidden;
+    float: none;
+  }
+  @mixin atMedium {
+    width: 45%;
+    float: left;
+  }
+  @mixin atLarge {
+    width: 45%;
+    float: left;
+  }
+}
+
+.dally {
+  width: 100%;
+  padding: 0 20px 20px 20px;
+  overflow: hidden;
+  @mixin atSmall {
+    width: 100%;
+    overflow: hidden;
+    float: none;
+  }
+  @mixin atMedium {
+    width: 45%;
+    float: right;
+  }
+  @mixin atLarge {
+    width: 45%;
+    float: right;
+  }
+}
+
+.logo {
+  text-align: center;
+  width: 150px;
+  margin: 0 auto 1.6em auto;
+  @mixin atSmall {
+    width: 150px;
+  }
+  @mixin atMedium {
+    width: 250px;
+  }
+}
+
+.title {
+  font-weight: 300;
+  margin: 0 0 0.5em 0;
+  font-size: 1.2rem;
+  @mixin atSmall {
+    font-size: 1.3rem;
+  }
+  @mixin atMedium {
+    font-size: 1.8rem;
+  }
+  @mixin atLarge {
+    font-size: 1.8rem;
+  }
+}
+
+.subtitle {
+  font-weight: 300;
+  margin: 0 0 0.5em 0;
+  font-size: 0.9rem;
+  color: #666;
+  white-space: wrap;
+  text-align: center;
+}
+
+.subtitle a {
+  font-weight: 300;
+  color: #000;
+  text-decoration: underline;
+}
+
+.subtitle a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.dates {
+  display: none;
+}
+
+.my-title {
+  font-weight: 500;
+  margin: 0 0 0.5em 0;
+  font-size: 1rem;
+  @mixin atSmall {
+    font-size: 1rem;
+  }
+  @mixin atMedium {
+    font-size: 1.6rem;
+  }
+  @mixin atLarge {
+    font-size: 1.6rem;
+  }
+}
+
+.description {
+  font-weight: 300;
+  margin: 0 0 0.5em 0;
+  font-size: 1rem;
+  @mixin atSmall {
+    font-size: 1rem;
+  }
+  @mixin atMedium {
+    font-size: 1.4rem;
+  }
+  @mixin atLarge {
+    font-size: 1.4rem;
+  }
+}
+
+.highlights {
+  font-weight: 300;
+  margin: 0 0 0.5em 0;
+  margin: 0 0 0.5em 0;
+  font-size: 1rem;
+  @mixin atSmall {
+    font-size: 1rem;
+  }
+  @mixin atMedium {
+    font-size: 1.2rem;
+  }
+  @mixin atLarge {
+    font-size: 1.2rem;
+  }
+}
+
+.technologies {
+  font-weight: 300;
+  margin: 0 0 0.5em 0;
+  font-size: 1rem;
+  @mixin atSmall {
+    font-size: 1rem;
+  }
+  @mixin atMedium {
+    font-size: 1rem;
+  }
+  @mixin atLarge {
+    font-size: 1rem;
+  }
+  div {
+    display: inline-block;
+    margin-right: 2em;
+  }
+}
+
+.tools {
+  font-weight: 300;
+  margin: 0 0 0.5em 0;
+  font-size: 1rem;
+  @mixin atSmall {
+    font-size: 1rem;
+  }
+  @mixin atMedium {
+    font-size: 1rem;
+  }
+  @mixin atLarge {
+    font-size: 1rem;
+  }
+  div {
+    display: inline-block;
+    margin-right: 2em;
+  }
+  nav {
+    @mixin atSmall {
+      display: none;
+    }
+  }
+  .menu-link {
+    @mixin atSmall {
+      display: none;
+    }
+  }
+  .home {
+    @mixin atSmall {
+      display: none;
+    }
+  }
+}

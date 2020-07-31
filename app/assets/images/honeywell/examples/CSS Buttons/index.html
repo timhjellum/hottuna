@@ -1,0 +1,228 @@
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<title>Image vs. CSS Buttons</title>
+<link rel="stylesheet" type="text/css" href="online_ordering_buttons.css">
+<link href='http://fonts.googleapis.com/css?family=Oswald:400, 700, 300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono|Oxygen' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css'>
+<style>
+body { padding: 20px; font: 14px/1.4em 'Oxygen', sans-serif; color: #454545; }
+h1 { font-size: 28px; font-family: 'Oswald', sans-serif; color: #ed2e24; clear: both; }
+h2 { font-size: 22px; font-family: 'Oswald', sans-serif; color: #000; clear: both; margin: 0; padding: 20px 0; }
+h3 { font-size: 20px; font-family: 'Oswald', sans-serif; color: #999; clear: both; padding: 20px 0; margin: 0; }
+table {  }
+td { padding: 1px 5px; font: 14px/1.4em 'Oxygen', sans-serif; color: #454545; }
+th { padding: 2px 5px; font: 14px/1.4em 'Oxygen', sans-serif; color: #454545; background-color: #eee; text-align: left; }
+td.image_bg{ background-image: url('Artifacts/image_bg.png'); }
+p.image_bg{ background-image: url('Artifacts/image_bg.png'); display: table; padding: 20px; }
+
+pre { background-color: #454545; padding: 5px 10px; clear: both; height: 100%; display: block; }
+.comment { font: 10px 'Aldrich', "Lucida Console"; color: #999; }
+.important { font: 10px 'Aldrich', "Lucida Console"; color: red; }
+pre code { font: 10px 'Aldrich', "Lucida Console"; color: #fff; }
+div.image div, td.image img { border: none !important;  }
+p, table, h1 { clear: both; }
+p, div { font: 14px/1.4em 'Oxygen', sans-serif; color: #454545; }
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+
+<body>
+<h1>Image vs. CSS Buttons</h1>
+
+<ul>
+<li>Gradient is supported by the following browsers and versions: Firefox 3.6+, Chrome 4+, Safari 4+, Opera 11.10+ and Internet Explorer 6+; and degrades elegantly with a solid background color.</li>
+<li>Border radius (rounded corners) is supported by the following browsers and versions: Firefox 3.6+, Chrome 4+, Safari 4+, Opera 11.10+ and Internet Explorer 9+;</li>
+<li>Drop Shadow is supported by the following browsers and versions: Firefox 3.6+, Chrome 4+, Safari 4+, Opera 11.10+ and Internet Explorer 9+;</li>
+</ul>
+<table>
+<tr><th>Image</th><th>CSS3 Button (Fixed Width)</th><th>CSS3 Button (Native Width)</th><th>Code</th></tr>
+<tr><td class="image_bg"><button style="background: url('Artifacts/spexCommonSprite_v2.png') 0 -1885px; width: 183px; height: 30px;"></button></td><td class="image_bg fixed"><button class="btn_blue_sm">Add to Order Ack - Not for Sale</button></td><td class="image_bg"><button class="btn_blue_sm">Add to Order Ack - Not for Sale</button></td><td><pre><code>&lt;button class=&quot;btn_blue_sm&quot;&gt;Add to Order Ack - Not for Sale&lt;/button&gt;</code></pre></td></tr>
+<tr><td class="image_bg"><button style="background: url('Artifacts/spexCommonSprite_v2.png') 0 -1928px; width: 175px; height: 30px;"></button></td><td class="image_bg fixed"><button class="btn_blue_sm">Add to Order Ack - Can't Supply</button></div></td><td class="image_bg"><button class="btn_blue_sm">Add to Order Ack - Can't Supply</button></div></td><td><pre><code>&lt;button class=&quot;btn_blue_sm&quot;&gt;Add to Order Ack - Can't Supply&lt;/button&gt;</code></pre></td></tr>
+<tr><td class="image_bg"><button style="background: url('Artifacts/spexCommonSprite_v2.png') 0 -1970px; width: 176px; height: 30px;"></button></td><td class="image_bg fixed"><button class="btn_blue_sm">Add to Order</button></div></td><td class="image_bg"><button class="btn_blue_sm">Add to Order</button></div></td><td><pre><code>&lt;button class=&quot;btn_blue_sm&quot;&gt;Add to Order&lt;/button&gt;</code></pre></td></tr>
+<tr><td class="image_bg"><button style="background: url('Artifacts/spexCommonSprite_v2.png') 0 -2009px; width: 177px; height: 30px;"></button></td><td class="image_bg fixed"><button class="btn_blue_sm">Add to Order & Get Pricing</button></td><td class="image_bg"><button class="btn_blue_sm">Add to Order & Get Pricing</button></td><td><pre><code>&lt;button class=&quot;btn_blue_sm&quot;&gt;Add to Order &amp; Get Pricing&lt;/button&gt;</code></pre></td></tr>
+<tr><td class="image_bg"><button style="background: url('Artifacts/spexCommonSprite_v2.png') 0 -2040px; width: 177px; height: 30px;"></button></td><td class="image_bg fixed"><button class="btn_blue_sm">Select Replacement</button></td><td class="image_bg"><button class="btn_blue_sm">Select Replacement</button></td><td><pre><code>&lt;button class=&quot;btn_blue_sm&quot;&gt;Select Replacement&lt;/button&gt;</code></pre></td></tr>
+<tr><td class="image_bg"><button style="background: url('Artifacts/spexCommonSprite_v2.png') 0 -1757px; width: 183px; height: 35px;"></button></td><td style="text-align: center;">n/a</td><td class="image_bg"><button class="btn_red">Button Text</button></td><td><pre><code>&lt;button class=&quot;btn_red&quot;&gt;Button Text&lt;/button&gt;</code></pre></td></tr>
+<tr><td class="image_bg"><button style="background: url('Artifacts/spexCommonSprite_v2.png') 0 -1683px; width: 183px; height: 35px;"></button></td><td style="text-align: center;">n/a</td><td class="image_bg"><button class="btn_blue">Button Text</button></td><td><pre><code>&lt;button class=&quot;btn_blue&quot;&gt;Button Text&lt;/button&gt;</code></pre></td></tr>
+<tr><td class="image_bg"><button style="background: url('Artifacts/spexCommonSprite_v2.png') 0 -1838px; width: 183px; height: 35px;"></button></td><td style="text-align: center;">n/a</td><td class="image_bg"><button class="btn_silver">Button Text</button></td><td><pre><code>&lt;button class=&quot;btn_silver&quot;&gt;Button Text&lt;/button&gt;</code></pre></td></tr>
+</table>
+<p>Fixed width requires an additional style applied to each button, and additional maintenance may be required.</p>
+<h3>Required CSS</h3>
+<pre>
+<code>
+.btn_red {
+    background: #b30606; <span class="comment">/* Old browsers */</span>	
+    background: -moz-linear-gradient(top, #dfadad 0%, #b30606 30%, #b30606 100%); <span class="comment">/* FF3.6+ */</span>
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dfadad), color-stop(30%, #b30606), color-stop(100%, #b30606)); <span class="comment">/* Chrome, Safari4+ */</span>
+    background: -webkit-linear-gradient(top, #dfadad 0%, #b30606 30%, #b30606 100%); <span class="comment">/* Chrome10+, Safari5.1+ */</span>
+    background: -o-linear-gradient(top, #dfadad 0%, #b30606 30%, #b30606 100%); <span class="comment">/* Opera 11.10+ */</span>
+    background: -ms-linear-gradient(top, #dfadad 0%, #b30606 30%, #b30606 100%); <span class="comment">/* IE10+ */</span>
+    background: linear-gradient(to bottom, #dfadad 0%, #b30606 30%, #b30606 100%); <span class="comment">/* W3C */</span>
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfadad', endColorstr='#b30606', GradientType=0 ); <span class="comment">/* IE6-9 */</span>
+    -webkit-border-radius: 5;
+    -moz-border-radius: 5;
+    border-radius: 5px;
+    font: bold 12px Arial;
+    color: #fff;
+    padding: 8px 20px;
+    border-top: 1px solid #e8aaaf;
+    border-right: 1px solid #bc3643;	
+    border-bottom: 1px solid #e8aaaf;	
+    border-left: 1px solid #bc3643;
+    text-decoration: none;
+    -webkit-box-shadow: 3px 3px 3px 0px rgba(51, 51, 51, 1); <span class="comment">/* h shadow, v shadow, blur, spread */</span>
+    -moz-box-shadow: 3px 3px 3px 0px rgba(51, 51, 51, 1);
+    box-shadow: 3px 3px 3px 0px rgba(51, 51, 51, 1);
+    margin: 0 0 12px 0;
+}
+.btn_red:hover {
+    background: #e55151; <span class="comment">/* Old browsers */</span>	
+    background: -moz-linear-gradient(top, #fff 0%, #e55151 30%, #e55151 100%); <span class="comment">/* FF3.6+ */</span>
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(30%, #e55151), color-stop(100%, #e55151)); <span class="comment">/* Chrome, Safari4+ */</span>
+    background: -webkit-linear-gradient(top, #fff 0%, #e55151 30%, #e55151 100%); <span class="comment">/* Chrome10+, Safari5.1+ */</span>
+    background: -o-linear-gradient(top, #fff 0%, #e55151 30%, #e55151 100%); <span class="comment">/* Opera 11.10+ */</span>
+    background: -ms-linear-gradient(top, #fff 0%, #e55151 30%, #e55151 100%); <span class="comment">/* IE10+ */</span>
+    background: linear-gradient(to bottom, #fff 0%, #e55151 30%, #e55151 100%); <span class="comment">/* W3C */</span>
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#e55151', GradientType=0 ); <span class="comment">/* IE6-9 */</span>
+    text-decoration: none;
+}
+.btn_blue {
+    background: #3b87de; <span class="comment">/* Old browsers */</span>
+    background: -moz-linear-gradient(top, #adcdf1 0%, #3b87de 30%, #3b87de 100%); <span class="comment">/* FF3.6+ */</span>
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #adcdf1), color-stop(30%, #3b87de), color-stop(100%, #3b87de)); <span class="comment">/* Chrome, Safari4+ */</span>
+    background: -webkit-linear-gradient(top, #adcdf1 0%, #3b87de 30%, #3b87de 100%); <span class="comment">/* Chrome10+, Safari5.1+ */</span>
+    background: -o-linear-gradient(top, #adcdf1 0%, #3b87de 30%, #3b87de 100%); <span class="comment">/* Opera 11.10+ */</span>
+    background: -ms-linear-gradient(top, #adcdf1 0%, #3b87de 30%, #3b87de 100%); <span class="comment">/* IE10+ */</span>
+    background: linear-gradient(to bottom, #adcdf1 0%, #3b87de 30%, #3b87de 100%); <span class="comment">/* W3C */</span>
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#adcdf1', endColorstr='#3b87de', GradientType=0 ); <span class="comment">/* IE6-9 */</span>
+    -webkit-border-radius: 5;
+    -moz-border-radius: 5;
+    border-radius: 5px;
+    font: bold 11px Arial;
+    color: #fff;
+    padding: 8px 20px;
+    border-top: 1px solid #adcdf1; <span class="comment">/* adcdf1 */</span>
+    border-right: 1px solid #306cb2;	
+    border-bottom: 1px solid #adcdf1;	
+    border-left: 1px solid #306cb2;
+    text-decoration: none;
+    -webkit-box-shadow: 3px 3px 3px 0px rgba(51, 51, 51, 1); <span class="comment">/* h shadow, v shadow, blur, spread */</span>
+    -moz-box-shadow: 3px 3px 3px 0px rgba(51, 51, 51, 1);
+    box-shadow: 3px 3px 3px 0px rgba(51, 51, 51, 1);
+    margin: 0 0 12px 0;
+}
+.btn_blue:hover {
+    background: #67a2e5; <span class="comment">/* Old browsers */</span>	
+    background: -moz-linear-gradient(top, #fff 0%, #67a2e5 30%, #67a2e5 100%); <span class="comment">/* FF3.6+ */</span>
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(30%, #67a2e5), color-stop(100%, #67a2e5)); <span class="comment">/* Chrome, Safari4+ */</span>
+    background: -webkit-linear-gradient(top, #fff 0%, #67a2e5 30%, #67a2e5 100%); <span class="comment">/* Chrome10+, Safari5.1+ */</span>
+    background: -o-linear-gradient(top, #fff 0%, #67a2e5 30%, #67a2e5 100%); <span class="comment">/* Opera 11.10+ */</span>
+    background: -ms-linear-gradient(top, #fff 0%, #67a2e5 30%, #67a2e5 100%); <span class="comment">/* IE10+ */</span>
+    background: linear-gradient(to bottom, #fff 0%, #67a2e5 30%, #67a2e5 100%); <span class="comment">/* W3C */</span>
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#67a2e5', GradientType=0 ); <span class="comment">/* IE6-9 */</span>
+    text-decoration: none;
+}
+.btn_silver {
+    background: #3b87de; <span class="comment">/* Old browsers */</span>
+    background: -moz-linear-gradient(top, #eae9e8 0%, #817a76 30%, #817a76 100%); <span class="comment">/* FF3.6+ */</span>
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eae9e8), color-stop(30%, #817a76), color-stop(100%, #817a76)); <span class="comment">/* Chrome, Safari4+ */</span>
+    background: -webkit-linear-gradient(top, #eae9e8 0%, #817a76 30%, #817a76 100%); <span class="comment">/* Chrome10+, Safari5.1+ */</span>
+    background: -o-linear-gradient(top, #eae9e8 0%, #817a76 30%, #817a76 100%); <span class="comment">/* Opera 11.10+ */</span>
+    background: -ms-linear-gradient(top, #eae9e8 0%, #817a76 30%, #817a76 100%); <span class="comment">/* IE10+ */</span>
+    background: linear-gradient(to bottom, #eae9e8 0%, #817a76 30%, #817a76 100%); <span class="comment">/* W3C */</span>
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eae9e8', endColorstr='#817a76', GradientType=0 ); <span class="comment">/* IE6-9 */</span>
+    -webkit-border-radius: 5;
+    -moz-border-radius: 5;
+    border-radius: 5px;
+    font: bold 11px Arial;
+    color: #fff;
+    padding: 8px 20px;
+    border-top: 1px solid #eee; 
+    border-right: 1px solid #666;	
+    border-bottom: 1px solid #666;	
+    border-left: 1px solid #eee;
+    text-decoration: none;
+    -webkit-box-shadow: 3px 3px 3px 0px rgba(51, 51, 51, 1); <span class="comment">/* h shadow, v shadow, blur, spread */</span>
+    -moz-box-shadow: 3px 3px 3px 0px rgba(51, 51, 51, 1);
+    box-shadow: 3px 3px 3px 0px rgba(51, 51, 51, 1);
+    margin: 0 0 12px 0;
+}
+.btn_silver:hover {
+    background: #a9a4a1; <span class="comment">/* Old browsers */</span>	
+    background: -moz-linear-gradient(top, #fff 0%, #a9a4a1 30%, #a9a4a1 100%); <span class="comment">/* FF3.6+ */</span>
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(30%, #a9a4a1), color-stop(100%, #a9a4a1)); <span class="comment">/* Chrome, Safari4+ */</span>
+    background: -webkit-linear-gradient(top, #fff 0%, #a9a4a1 30%, #a9a4a1 100%); <span class="comment">/* Chrome10+, Safari5.1+ */</span>
+    background: -o-linear-gradient(top, #fff 0%, #a9a4a1 30%, #a9a4a1 100%); <span class="comment">/* Opera 11.10+ */</span>
+    background: -ms-linear-gradient(top, #fff 0%, #a9a4a1 30%, #a9a4a1 100%); <span class="comment">/* IE10+ */</span>
+    background: linear-gradient(to bottom, #fff 0%, #a9a4a1 30%, #a9a4a1 100%); <span class="comment">/* W3C */</span>
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#a9a4a1', GradientType=0 ); <span class="comment">/* IE6-9 */</span>
+    text-decoration: none;
+}
+.btn_blue_sm {
+    background: #3b87de; <span class="comment">/* Old browsers */</span>
+    background: -moz-linear-gradient(top, #99ccff 0%, #3b87de 80%, #3b87de 100%); <span class="comment">/* FF3.6+ */</span>
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #99ccff), color-stop(80%, #3b87de), color-stop(100%, #3b87de)); <span class="comment">/* Chrome, Safari4+ */</span>
+    background: -webkit-linear-gradient(top, #99ccff 0%, #3b87de 80%, #3b87de 100%); <span class="comment">/* Chrome10+, Safari5.1+ */</span>
+    background: -o-linear-gradient(top, #99ccff 0%, #3b87de 80%, #3b87de 100%); <span class="comment">/* Opera 11.10+ */</span>
+    background: -ms-linear-gradient(top, #99ccff 0%, #3b87de 80%, #3b87de 100%); <span class="comment">/* IE10+ */</span>
+    background: linear-gradient(to bottom, #99ccff 0%, #3b87de 80%, #3b87de 100%); <span class="comment">/* W3C */</span>
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ccff', endColorstr='#3b87de', GradientType=0 ); <span class="comment">/* IE6-9 */</span>
+    -webkit-border-radius: 5;
+    -moz-border-radius: 5;
+    border-radius: 5px;
+    font: bold 11px Arial;
+    color: #fff;
+    padding: 2px inherit;
+    border: solid #999999 1px;
+    text-decoration: none;
+    -webkit-box-shadow: 0px 3px 3px 0px rgba(153, 153, 153, 1); <span class="comment">/* h shadow, v shadow, blur, spread */</span>
+    -moz-box-shadow: 0px 3px 3px 0px rgba(153, 153, 153, 1);
+    box-shadow: 0px 3px 3px 0px rgba(153, 153, 153, 1);
+    margin: 0 0 12px 0;
+}
+.btn_blue_sm:hover {
+    background: #c6dcf5;
+    background-image: -webkit-linear-gradient(top, #c6dcf5, #71b8db);
+    background-image: -moz-linear-gradient(top, #c6dcf5, #71b8db);
+    background-image: -ms-linear-gradient(top, #c6dcf5, #71b8db);
+    background-image: -o-linear-gradient(top, #c6dcf5, #71b8db);
+    background-image: linear-gradient(to bottom, #c6dcf5, #71b8db);
+    text-decoration: none;
+}
+<span class="comment">/* only required for fixed width */</span>
+.fixed .btn_blue_sm { 
+  width: 190px <span class="important">!important;</span>;
+}
+<span class="comment">/* add this below the button classes */</span>
+button {
+    border: none <span class="important">!important;</span>
+}
+</code>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
