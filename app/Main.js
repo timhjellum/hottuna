@@ -28,6 +28,8 @@ import Visa from "./components/Visa"
 import VeterinariansPetInsurance from "./components/VeterinariansPetInsurance"
 import WyomingWorkforceServices from "./components/WyomingWorkforceServices"
 
+import "./assets/styles/styles.css"
+
 class Main extends Component {
   constructor(props) {
     super(props)

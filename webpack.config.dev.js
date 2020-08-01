@@ -2,28 +2,28 @@ const HtmlWebPackPlugin = require("html-webpack-plugin")
 const path = require("path")
 
 module.exports = {
-  mode: "development",
   entry: "./app/Main.js",
-
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
-    publicPath: "/"
+    filename: "bundle.js"
   },
-
   optimization: {
     splitChunks: {
       // include all types of chunks
       chunks: "all"
     }
   },
+  mode: "development",
   devtool: "inline-source-map",
   devServer: {
-    port: 3030,
     contentBase: path.join(__dirname, "app"),
+    inline: true,
     hot: true,
+    port: 3030,
+    open: true,
     historyApiFallback: true
   },
+  watch: true,
   module: {
     rules: [
       {
@@ -37,8 +37,15 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        test: /\.css$/i,
+        use: [
+          "style-loader",
+          "css-loader?url=false",
+          {
+            loader: "less-loader"
+            //, options: { plugins: postCSSPlugins }
+          }
+        ]
       },
       {
         test: /\.(png|j?g|svg|gif)?$/,
