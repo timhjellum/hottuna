@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from "react"
 
 function BlackAndVeatch() {
+  //const blackAndVeatchLogoLarge = "../assets/images/black-and-veatch/logo--large.png 250w"
+  //const blackAndVeatchLogoSmall = "../assets/images/black-and-veatch/logo--small.png 200w"
+  //const blackAndVeatchLogoDefault = "../assets/images/black-and-veatch/logo--default.png 150w"
+
+  const blackAndVeatchHeroLarge = "../assets/images/black-and-veatch/hero--large.jpg 540w"
+  const blackAndVeatchHeroMedium = "../assets/images/black-and-veatch/hero--medium.jpg 470w"
+  const blackAndVeatchHeroSmall = "../assets/images/black-and-veatch/hero--small.jpg 360w"
+  const blackAndVeatchHeroDefault = "../assets/images/black-and-veatch/hero--default.jpg 320w"
   return (
     <div className="wrapper">
-      <div className="box-2">
+      <div className="box-1">
         <div className="logo">{/*
-<picture>
-            <source sizes="250px" srcSet="../assets/images/black-and-veatch/logo--large.png 250w" media="(min-width: 1024px)" />
-            <source sizes="200px" srcSet="../assets/images/black-and-veatch/logo--small.png 200w" media="(min-width: 800px)" />
-            <img srcSet="../assets/images/black-and-veatch/logo--default.png 150w" alt="Black and Veatch" />
-          </picture>
-*/}</div>
+		  <picture>
+            <source sizes="250px" srcSet={blackAndVeatchLogoLarge} media="(min-width: 1024px)" />
+            <source sizes="200px" srcSet={blackAndVeatchLogoSmall} media="(min-width: 800px)" />
+            <img srcSet={blackAndVeatchLogoDefault} alt="Black and Veatch" />
+		  </picture>
+		  */}</div>
         <div className="text-content">
           <h1 className="title">Black and Veatch</h1>
           <h3 className="dates"></h3>
@@ -25,14 +33,14 @@ function BlackAndVeatch() {
           <p className="tools"></p>
         </div>
       </div>
-      <div className="box-1">{/*
-<picture>
-          <source sizes="540px" srcSet="../assets/images/black-and-veatch/hero--large.jpg 540w" media="(min-width: 1200px)" />
-          <source sizes="470px" srcSet="../assets/images/black-and-veatch/hero--medium.jpg 470w" media="(min-width: 1024px)" />
-          <source sizes="360px" srcSet="../assets/images/black-and-veatch/hero--small.jpg 360w" media="(min-width: 800px)" />
-          <img srcSet="../assets/images/black-and-veatch/hero--default.jpg 320w" alt="Black and Veatch" />
+      <div className="box-2">
+        <picture>
+          <source sizes="540px" srcSet={blackAndVeatchHeroLarge} media="(min-width: 1200px)" />
+          <source sizes="470px" srcSet={blackAndVeatchHeroMedium} media="(min-width: 1024px)" />
+          <source sizes="360px" srcSet={blackAndVeatchHeroSmall} media="(min-width: 800px)" />
+          <img srcSet={blackAndVeatchHeroDefault} alt="Black and Veatch" />
         </picture>
-*/}</div>
+      </div>
     </div>
   )
 }

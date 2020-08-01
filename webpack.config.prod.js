@@ -30,8 +30,24 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|j?g|svg|gif)?$/,
+        test: /\.(png|j?g|gif)?$/,
         use: "file-loader"
+      },
+      {
+        test: /\.svg/,
+        use: {
+          loader: "svg-url-loader",
+          options: {}
+        }
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          "css-loader",
+          {
+            loader: "less-loader"
+          }
+        ]
       },
       {
         test: /\.less$/,
@@ -41,8 +57,9 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: path.resolve(__dirname, "public/index.html"),
-      filename: "index.html"
+      filename: "index.html",
+      inject: true,
+      template: path.resolve(__dirname, "public", "index.html")
     })
   ]
 }

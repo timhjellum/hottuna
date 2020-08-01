@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react"
 
 function Diginext() {
+  const diginextLogoLarge = "../assets/images/diginext/logo--large.png 250w"
+  const diginextLogoSmall = "../assets/images/diginext/logo--small.png 200w"
+  const diginextLogoDefault = "../assets/images/diginext/logo--default.png 150w"
   return (
     <div className="wrapper">
-      <div className="box-2">
-        <div className="logo">{/*
-<picture>
-            <source sizes="250px" srcSet="../assets/images/diginext/logo--large.png 250w" media="(min-width: 1024px)" />
-            <source sizes="200px" srcSet="../assets/images/diginext/logo--small.png 200w" media="(min-width: 800px)" />
-            <img srcSet="../assets/images/diginext/logo--default.png 150w" alt="diginext" />
+      <div className="box-1">
+        <div className="logo">
+          <picture>
+            <source sizes="250px" srcSet={diginextLogoLarge} media="(min-width: 1024px)" />
+            <source sizes="200px" srcSet={diginextLogoSmall} media="(min-width: 800px)" />
+            <img srcSet={diginextLogoDefault} alt="Black and Veatch" />
           </picture>
-*/}</div>
+        </div>
         <div className="text-content">
           <h1 className="title">Diginext</h1>
           <h2 className="subtitle">
@@ -32,14 +35,7 @@ function Diginext() {
           <p className="tools"></p>
         </div>
       </div>
-      <div className="box-1">{/*
-<picture>
-          <source sizes="540px" srcSet="../assets/images/diginext/hero--large.jpg 540w" media="(min-width: 1200px)" />
-          <source sizes="470px" srcSet="../assets/images/diginext/hero--medium.jpg 470w" media="(min-width: 1024px)" />
-          <source sizes="360px" srcSet="../assets/images/diginext/hero--small.jpg 360w" media="(min-width: 800px)" />
-          <img srcSet="../assets/images/diginext/hero--default.jpg 320w" alt="Diginext Films" />
-        </picture>
-*/}</div>
+      <div className="box-2"></div>
     </div>
   )
 }

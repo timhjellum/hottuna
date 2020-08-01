@@ -7,7 +7,10 @@ import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, 
 import BlackAndVeatch from "./components/BlackAndVeatch"
 import BostonMarket from "./components/BostonMarket"
 import Diginext from "./components/Diginext"
-import Disney from "./components/Disney"
+import DisneyWeddings from "./components/DisneyWeddings"
+import DisneyMeetings from "./components/DisneyMeetings"
+import DisneyHoneymoons from "./components/DisneyHoneymoons"
+import DisneyMaps from "./components/DisneyMaps"
 import EducationDevelopmentCenter from "./components/EducationDevelopmentCenter"
 import EpiscopalChurch from "./components/EpiscopalChurch"
 import Fastsigns from "./components/Fastsigns"
@@ -143,7 +146,8 @@ class Main extends Component {
   render() {
     return (
       <div className="page-wrapper">
-        <nav>
+        {/*
+		<nav>
           <ul>
             <li>
               <Link activeClass="active" className="episcopal-church" to="episcopal-church" spy={true} smooth={true} duration={500}>
@@ -161,24 +165,34 @@ class Main extends Component {
               </Link>
             </li>
           </ul>
-        </nav>
+		</nav>
+		*/}
 
-        <div name="black-and-veatch" className="section">
+        <div name="black-and-veatch" className="section black-and-veatch">
           <BlackAndVeatch />
         </div>
-        <div name="boston-market section" className="section">
+        <div name="boston-market" className="boston-market section">
           <BostonMarket />
         </div>
-        <div name="diginext" className="section">
+        <div name="diginext" className="section diginext">
           <Diginext />
         </div>
-        <div name="disney" className="section">
-          <Disney />
+        <div name="disney-weddings" className="section disney-weddings">
+          <DisneyWeddings />
         </div>
-        <div name="edc" className="section">
+        <div name="disney-meetings" className="section disney-meetings">
+          <DisneyMeetings />
+        </div>
+        <div name="disney-honeymoons" className="section disney-honeymoons">
+          <DisneyHoneymoons />
+        </div>
+        <div name="disney-maps" className="section disney-maps">
+          <DisneyMaps />
+        </div>
+        <div name="edc" className="section edc">
           <EducationDevelopmentCenter />
         </div>
-        <div name="episcopal-church" className="section">
+        <div name="episcopal-church" className="section episcopal-church">
           <EpiscopalChurch />
         </div>
         <div name="fastsigns" className="section">
