@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from "react"
-
+const novartisLogoLarge = "../assets/images/novartis/logo--large.png 250w"
+const novartisLogoSmall = "../assets/images/novartis/logo--small.png 200w"
+const novartisLogoDefault = "../assets/images/novartis/logo--default.png 150w"
+const novartisHeroLarge = "../assets/images/novartis/hero--large.jpg 540w"
+const novartisHeroMedium = "../assets/images/novartis/hero--medium.jpg 470w"
+const novartisHeroSmall = "../assets/images/novartis/hero--small.jpg 360w"
+const novartisHeroDefault = "../assets/images/novartis/hero--default.jpg 320w"
 function Novartis() {
+  let alt = "Novartis Pharmaceuticals"
   return (
     <>
-      {" "}
       <div className="wrapper">
-        <div className="box-2">
-          <div className="logo">{/*
-<picture>
-              <source sizes="250px" srcSet="../assets/images/novartis/logo--large.png 250w" media="(min-width: 1024px)" />
-              <source sizes="200px" srcSet="../assets/images/novartis/logo--small.png 200w" media="(min-width: 800px)" />
-              <img srcSet="../assets/images/novartis/logo--default.png 150w" alt="Novartis" />
+        <div className="box-1">
+          <div className="logo">
+            <picture>
+              <source sizes="540px" srcSet={novartisLogoLarge} media="(min-width: 1024px)" />
+              <source sizes="360px" srcSet={novartisLogoSmall} media="(min-width: 800px)" />
+              <img srcSet={novartisLogoDefault} alt={alt} />
             </picture>
-*/}</div>
+          </div>
           <div className="content">
-            <h1 className="title">Novartis Pharmaceuticals</h1>
+            <h1>{alt}</h1>
             <h2 className="subtitle">
               <a href="http://www.nibr.com" target="_blank">
                 nibr.com
@@ -31,14 +37,19 @@ function Novartis() {
             <p className="tools"></p>
           </div>
         </div>
-        <div className="box-1">{/*
-<picture>
-            <source sizes="540px" srcSet="../assets/images/novartis/hero--large.jpg 540w" media="(min-width: 1200px)" />
-            <source sizes="470px" srcSet="../assets/images/novartis/hero--medium.jpg 470w" media="(min-width: 1024px)" />
-            <source sizes="360px" srcSet="../assets/images/novartis/hero--small.jpg 360w" media="(min-width: 800px)" />
-            <img srcSet="../assets/images/novartis/hero--default.jpg 320w" alt="Novartis" />
-          </picture>
-*/}</div>
+        <div className="box-2">
+          {" "}
+          <div className="wrapper">
+            <div className="content">
+              <picture>
+                <source sizes="540px" srcSet={novartisHeroLarge} media="(min-width: 1200px)" />
+                <source sizes="470px" srcSet={novartisHeroMedium} media="(min-width: 1024px)" />
+                <source sizes="360px" srcSet={novartisHeroSmall} media="(min-width: 800px)" />
+                <img srcSet={novartisHeroDefault} alt={alt} />
+              </picture>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   )

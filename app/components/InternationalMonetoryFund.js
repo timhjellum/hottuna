@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from "react"
-
+const internationalMonetoryFundLogoLarge = "../assets/images/international-monetory-fund/logo--large.png 250w"
+const internationalMonetoryFundLogoSmall = "../assets/images/international-monetory-fund/logo--small.png 200w"
+const internationalMonetoryFundLogoDefault = "../assets/images/international-monetory-fund/logo--default.png 150w"
+const internationalMonetoryFundHeroLarge = "../assets/images/international-monetory-fund/hero--large.jpg 540w"
+const internationalMonetoryFundHeroMedium = "../assets/images/international-monetory-fund/hero--medium.jpg 470w"
+const internationalMonetoryFundHeroSmall = "../assets/images/international-monetory-fund/hero--small.jpg 360w"
+const internationalMonetoryFundHeroDefault = "../assets/images/international-monetory-fund/hero--default.jpg 320w"
 function InternationalMonetoryFund() {
+  let alt = "International Monetary Fund (IMF)"
   return (
     <>
-      {" "}
       <div className="wrapper">
-        <div className="box-2">
-          <div className="logo">{/*
-<picture>
-              <source sizes="250px" srcSet="../assets/images/imf/logo--large.png 250w" media="(min-width: 1024px)" />
-              <source sizes="200px" srcSet="../assets/images/imf/logo--small.png 200w" media="(min-width: 800px)" />
-              <img srcSet="../assets/images/imf/logo--default.png 150w" alt="International Monetary Fund" />
+        <div className="box-1">
+          <div className="logo">
+            <picture>
+              <source sizes="540px" srcSet={internationalMonetoryFundLogoLarge} media="(min-width: 1024px)" />
+              <source sizes="360px" srcSet={internationalMonetoryFundLogoSmall} media="(min-width: 800px)" />
+              <img srcSet={internationalMonetoryFundLogoDefault} alt={alt} />
             </picture>
-*/}</div>
+          </div>
           <div className="content">
-            <h1 className="title">International Monetary Fund (IMF)</h1>
+            <h1>{alt}</h1>
             <h2 className="subtitle">Intranet</h2>
             <h3 className="dates"></h3>
             <h2 className="my-title">Lead User Experience (UX) Designer, User Interface (UI) Developer</h2>
@@ -27,14 +33,19 @@ function InternationalMonetoryFund() {
             <p className="tools"></p>
           </div>
         </div>
-        <div className="box-1">{/*
-<picture>
-            <source sizes="540px" srcSet="../assets/images/imf/hero--large.jpg 540w" media="(min-width: 1200px)" />
-            <source sizes="470px" srcSet="../assets/images/imf/hero--medium.jpg 470w" media="(min-width: 1024px)" />
-            <source sizes="360px" srcSet="../assets/images/imf/hero--small.jpg 360w" media="(min-width: 800px)" />
-            <img srcSet="../assets/images/imf/hero--default.jpg 320w" alt="International Monetary Fund" />
-          </picture>
-*/}</div>
+        <div className="box-2">
+          {" "}
+          <div className="wrapper">
+            <div className="content">
+              <picture>
+                <source sizes="540px" srcSet={internationalMonetoryFundHeroLarge} media="(min-width: 1200px)" />
+                <source sizes="470px" srcSet={internationalMonetoryFundHeroMedium} media="(min-width: 1024px)" />
+                <source sizes="360px" srcSet={internationalMonetoryFundHeroSmall} media="(min-width: 800px)" />
+                <img srcSet={internationalMonetoryFundHeroDefault} alt={alt} />
+              </picture>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   )

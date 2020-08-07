@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from "react"
-
+const rockBottomLogoLarge = "../assets/images/rock-bottom/logo--large.png 250w"
+const rockBottomLogoSmall = "../assets/images/rock-bottom/logo--small.png 200w"
+const rockBottomLogoDefault = "../assets/images/rock-bottom/logo--default.png 150w"
+const rockBottomHeroLarge = "../assets/images/rock-bottom/hero--large.jpg 540w"
+const rockBottomHeroMedium = "../assets/images/rock-bottom/hero--medium.jpg 470w"
+const rockBottomHeroSmall = "../assets/images/rock-bottom/hero--small.jpg 360w"
+const rockBottomHeroDefault = "../assets/images/rock-bottom/hero--default.jpg 320w"
 function RockBottom() {
+  let alt = "Rock Bottom"
   return (
     <div className="wrapper">
-      <div className="box-2">
-        <div className="logo">{/*
-<picture>
-            <source sizes="250px" srcSet="../assets/images/rock-bottom/logo--large.png 250w" media="(min-width: 1024px)" />
-            <source sizes="200px" srcSet="../assets/images/rock-bottom/logo--small.png 200w" media="(min-width: 800px)" />
-            <img srcSet="../assets/images/rock-bottom/logo--default.png 150w" alt="" />
+      <div className="box-1">
+        <div className="logo">
+          <picture>
+            <source sizes="540px" srcSet={rockBottomLogoLarge} media="(min-width: 1024px)" />
+            <source sizes="360px" srcSet={rockBottomLogoSmall} media="(min-width: 800px)" />
+            <img srcSet={rockBottomLogoDefault} alt={alt} />
           </picture>
-*/}</div>
+        </div>
         <div className="text-content">
-          <h1 className="title">Rock Bottom</h1>
+          <h1>{alt}</h1>
           <h2 className="subtitle">Intranet &#38; Extranet</h2>
           <h3 className="dates">September 2010 â€“ June 2011</h3>
           <h2 className="my-title">Lead User Experience (UX) Designer, Interactive Designer (ID) &#38; User Interface (UI) Developer</h2>
@@ -46,14 +53,19 @@ function RockBottom() {
           </div>
         </div>
       </div>
-      <div className="box-1">{/*
-<picture>
-          <source sizes="540px" srcSet="../assets/images/rock-bottom/hero--large.jpg 540w" media="(min-width: 1200px)" />
-          <source sizes="470px" srcSet="../assets/images/rock-bottom/hero--medium.jpg 470w" media="(min-width: 1024px)" />
-          <source sizes="360px" srcSet="../assets/images/rock-bottom/hero--small.jpg 360w" media="(min-width: 800px)" />
-          <img srcSet="../assets/images/rock-bottom/hero--default.jpg 320w" alt="" />
-        </picture>
-*/}</div>
+      <div className="box-2">
+        {" "}
+        <div className="wrapper">
+          <div className="content">
+            <picture>
+              <source sizes="540px" srcSet={rockBottomHeroLarge} media="(min-width: 1200px)" />
+              <source sizes="470px" srcSet={rockBottomHeroMedium} media="(min-width: 1024px)" />
+              <source sizes="360px" srcSet={rockBottomHeroSmall} media="(min-width: 800px)" />
+              <img srcSet={rockBottomHeroDefault} alt={alt} />
+            </picture>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

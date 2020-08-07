@@ -4,6 +4,11 @@ function BostonMarket() {
   const bostonMarketLogoLarge = "../assets/images/boston-market/logo--large.png 250w"
   const bostonMarketLogoSmall = "../assets/images/boston-market/logo--small.png 200w"
   const bostonMarketLogoDefault = "../assets/images/boston-market/logo--default.png 150w"
+  const bostonMarketHeroLarge = "../assets/images/boston-market/hero--large.jpg 540w"
+  const bostonMarketHeroMedium = "../assets/images/boston-market/hero--medium.jpg 470w"
+  const bostonMarketHeroSmall = "../assets/images/boston-market/hero--small.jpg 360w"
+  const bostonMarketHeroDefault = "../assets/images/boston-market/hero--default.jpg 320w"
+  let alt = "Boston Market Website Redesign"
   return (
     <div className="wrapper">
       <div className="box-1">
@@ -11,11 +16,11 @@ function BostonMarket() {
           <picture>
             <source sizes="250px" srcSet={bostonMarketLogoLarge} media="(min-width: 1024px)" />
             <source sizes="200px" srcSet={bostonMarketLogoSmall} media="(min-width: 800px)" />
-            <img srcSet={bostonMarketLogoDefault} alt="Black and Veatch" />
+            <img srcSet={bostonMarketLogoDefault} alt={alt} />
           </picture>
         </div>
         <div className="text-content">
-          <h1 className="title">Boston Market Website Redesign</h1>
+          <h1>{alt}</h1>
           <h2 className="subtitle">
             <a href="https://www.bostonmarket.com" target="_blank">
               bostonmarket.com
@@ -69,7 +74,19 @@ function BostonMarket() {
           <p className="tools"></p>
         </div>
       </div>
-      <div className="box-2"></div>
+      <div className="box-2">
+        {" "}
+        <div className="wrapper">
+          <div className="content">
+            <picture>
+              <source sizes="540px" srcSet={bostonMarketHeroLarge} media="(min-width: 1200px)" />
+              <source sizes="470px" srcSet={bostonMarketHeroMedium} media="(min-width: 1024px)" />
+              <source sizes="360px" srcSet={bostonMarketHeroSmall} media="(min-width: 800px)" />
+              <img srcSet={bostonMarketHeroDefault} alt={alt} />
+            </picture>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

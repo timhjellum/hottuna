@@ -195,52 +195,52 @@ class Main extends Component {
         <div name="episcopal-church" className="section episcopal-church">
           <EpiscopalChurch />
         </div>
-        <div name="fastsigns" className="section">
+        <div name="fastsigns" className="section fastsigns">
           <Fastsigns />
         </div>
-        <div name="honeywell" className="section">
+        <div name="honeywell" className="section honeywell">
           <Honeywell />
         </div>
-        <div name="international-monetary-fund" className="section">
+        <div name="international-monetary-fund" className="section international-monetary-fund">
           <InternationalMonetoryFund />
         </div>
-        <div name="mastercard" className="section">
+        <div name="mastercard" className="section mastercard">
           <Mastercard />
         </div>
-        <div name="molson-coors" className="section">
+        <div name="molsoncoors" className="section molsoncoors">
           <MolsonCoors />
         </div>
-        <div name="newmont-mining" className="section">
+        <div name="newmont-mining" className="section newmont-mining">
           <NewmontMining />
         </div>
-        <div name="novartis" className="section">
+        <div name="novartis" className="section novartis">
           <Novartis />
         </div>
-        <div name="old-chicago" className="section">
+        <div name="old-chicago" className="section old-chicago">
           <OldChicago />
         </div>
-        <div name="orlando-magic" className="section">
+        <div name="orlando-magic" className="section orlando-magic">
           <OrlandoMagic />
         </div>
-        <div name="red-robin" className="section">
+        <div name="red-robin" className="section red-robin">
           <RedRobin />
         </div>
-        <div name="rock-bottom" className="section">
+        <div name="rock-bottom" className="section rock-bottom">
           <RockBottom />
         </div>
         <div name="severn-trent-services" className="section">
           <SevernTrentServices />
         </div>
-        <div name="trip" className="section">
+        <div name="trip" className="section trip">
           <Trip />
         </div>
         <div name="visa" className="visa section">
           <Visa />
         </div>
-        <div name="veterinarians-pet-insurance" className="section">
+        <div name="veterinarians-pet-insurance" className="veterinarians-pet-insurance section">
           <VeterinariansPetInsurance />
         </div>
-        <div name="wyoming-workforce-services" className="section">
+        <div name="wyoming-workforce-services" className="wyoming-workforce-services section">
           <WyomingWorkforceServices />
         </div>
         <a onClick={this.scrollToTop}>To the top!</a>

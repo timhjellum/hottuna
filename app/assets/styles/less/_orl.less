@@ -1,12 +1,12 @@
 @media @mobile {
   .orlando-magic {
-    .title {
+    h1 {
       color: #007bc5;
     }
     .subtitle {
       display: none;
     }
-    background: url("/assets/images/orlando-magic/bg--default.jpg") center top;
+    background: url("/assets/images/orlando-magic/bg--default.jpg") repeat center top;
     /* {
     background: url("/assets/images/orlando-magic/bg--small.jpg") center bottom;
   }
@@ -16,11 +16,40 @@
   @mixin atLarge {
     background: url("/assets/images/orlando-magic/bg--large.jpg") center bottom;
   }
-    }
+	}
+
+<picture>
+            <source sizes="540px" srcSet="../assets/images/orlando-magic/hero--large.jpg 540w" media="(min-width: 1200px)" />
+            <source sizes="470px" srcSet="../assets/images/orlando-magic/hero--medium.jpg 470w" media="(min-width: 1024px)" />
+            <source sizes="360px" srcSet="../assets/images/orlando-magic/hero--small.jpg 360w" media="(min-width: 800px)" />
+            <img srcSet="../assets/images/orlando-magic/hero--default.jpg 320w" alt="Orlando Magic" />
+          </picture>
+
   */
-    .dally-dally {
-      background-color: #e0e1e5;
-      box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.5);
+    .box-2 {
+      //background-image: url("/assets/images/boston-market/hero--default.jpg");
+      background-size: cover;
     }
   }
+}
+@media @mobile-landscape {
+  .orlando-magic {
+    background: url("/assets/images/orlando-magic/bg--medium.jpg");
+  }
+}
+@media @tablet {
+}
+@media @tablet-landscape {
+  .orlando-magic {
+    background: url("/assets/images/orlando-magic/bg--large.jpg");
+  }
+}
+@media @laptop {
+}
+@media @desktop {
+  .orlando-magic {
+    background: url("/assets/images/orlando-magic/bg--large.jpg");
+  }
+}
+@media @desktop-lg {
 }

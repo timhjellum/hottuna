@@ -4,6 +4,11 @@ function Diginext() {
   const diginextLogoLarge = "../assets/images/diginext/logo--large.png 250w"
   const diginextLogoSmall = "../assets/images/diginext/logo--small.png 200w"
   const diginextLogoDefault = "../assets/images/diginext/logo--default.png 150w"
+  const diginextHeroLarge = "../assets/images/diginext/hero--large.jpg 540w"
+  const diginextHeroMedium = "../assets/images/diginext/hero--medium.jpg 470w"
+  const diginextHeroSmall = "../assets/images/diginext/hero--small.jpg 360w"
+  const diginextHeroDefault = "../assets/images/diginext/hero--default.jpg 320w"
+  let alt = "Diginext"
   return (
     <div className="wrapper">
       <div className="box-1">
@@ -11,11 +16,11 @@ function Diginext() {
           <picture>
             <source sizes="250px" srcSet={diginextLogoLarge} media="(min-width: 1024px)" />
             <source sizes="200px" srcSet={diginextLogoSmall} media="(min-width: 800px)" />
-            <img srcSet={diginextLogoDefault} alt="Black and Veatch" />
+            <img srcSet={diginextLogoDefault} alt={alt} />
           </picture>
         </div>
         <div className="text-content">
-          <h1 className="title">Diginext</h1>
+          <h1>{alt}</h1>
           <h2 className="subtitle">
             <a href="https://www.diginextfilms.com/" target="_blank">
               diginextfilms.com
@@ -35,7 +40,19 @@ function Diginext() {
           <p className="tools"></p>
         </div>
       </div>
-      <div className="box-2"></div>
+      <div className="box-2">
+        {" "}
+        <div className="wrapper">
+          <div className="content">
+            <picture>
+              <source sizes="540px" srcSet={diginextHeroLarge} media="(min-width: 1200px)" />
+              <source sizes="470px" srcSet={diginextHeroMedium} media="(min-width: 1024px)" />
+              <source sizes="360px" srcSet={diginextHeroSmall} media="(min-width: 800px)" />
+              <img srcSet={diginextHeroDefault} alt={alt} />
+            </picture>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

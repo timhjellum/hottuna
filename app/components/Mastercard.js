@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from "react"
-
+const mastercardLogoLarge = "../assets/images/mastercard/logo--large.png 250w"
+const mastercardLogoSmall = "../assets/images/mastercard/logo--small.png 200w"
+const mastercardLogoDefault = "../assets/images/mastercard/logo--default.png 150w"
+const mastercardHeroLarge = "../assets/images/mastercard/hero--large.jpg 540w"
+const mastercardHeroMedium = "../assets/images/mastercard/hero--medium.jpg 470w"
+const mastercardHeroSmall = "../assets/images/mastercard/hero--small.jpg 360w"
+const mastercardHeroDefault = "../assets/images/mastercard/hero--default.jpg 320w"
 function Mastercard() {
+  let alt = "MasterCard"
   return (
     <div className="wrapper">
-      <div className="box-2">
-        <div className="logo">{/*
-<picture>
-            <source sizes="250px" srcSet="../assets/images/mastercard/logo--large.png 250w" media="(min-width: 1024px)" />
-            <source sizes="200px" srcSet="../assets/images/mastercard/logo--small.png 200w" media="(min-width: 800px)" />
-            <img srcSet="../assets/images/mastercard/logo--default.png 150w" alt="" />
+      <div className="box-1">
+        <div className="logo">
+          <picture>
+            <source sizes="540px" srcSet={mastercardLogoLarge} media="(min-width: 1024px)" />
+            <source sizes="360px" srcSet={mastercardLogoSmall} media="(min-width: 800px)" />
+            <img srcSet={mastercardLogoDefault} alt={alt} />
           </picture>
-*/}</div>
+        </div>
         <div className="content">
-          <h1 className="title">MasterCard</h1>
+          <h1>{alt}</h1>
           <h2 className="subtitle">Intranet</h2>
           <h3 className="dates">March 2012 â€“ October 2012</h3>
           <h2 className="my-title">Lead User Interface (UI) Developer</h2>
@@ -24,14 +31,19 @@ function Mastercard() {
           <p className="tools"></p>
         </div>
       </div>
-      <div className="box-1">{/*
-<picture>
-          <source sizes="540px" srcSet="../assets/images/mastercard/hero--large.png 540w" media="(min-width: 1200px)" />
-          <source sizes="470px" srcSet="../assets/images/mastercard/hero--medium.jpg 470w" media="(min-width: 1024px)" />
-          <source sizes="360px" srcSet="../assets/images/mastercard/hero--small.jpg 360w" media="(min-width: 800px)" />
-          <img srcSet="../assets/images/mastercard/hero--default.jpg 320w" alt="" />
-        </picture>
-*/}</div>
+      <div className="box-2">
+        {" "}
+        <div className="wrapper">
+          <div className="content">
+            <picture>
+              <source sizes="540px" srcSet={mastercardHeroLarge} media="(min-width: 1200px)" />
+              <source sizes="470px" srcSet={mastercardHeroMedium} media="(min-width: 1024px)" />
+              <source sizes="360px" srcSet={mastercardHeroSmall} media="(min-width: 800px)" />
+              <img srcSet={mastercardHeroDefault} alt={alt} />
+            </picture>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

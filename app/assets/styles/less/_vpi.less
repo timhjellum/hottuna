@@ -4,7 +4,48 @@
     .highlights {
       display: none;
     }
-    /* {
+    .box-1 {
+    }
+    .box-2 {
+      //background-image: url("/assets/images/vpi/hero--default.jpg");
+      background-size: cover;
+    }
+  }
+}
+@media @mobile-landscape {
+  .vpi {
+    .box-1 {
+      width: 45%;
+    }
+    .box-2 {
+      width: 45%;
+      float: right;
+      //background-image: url("/assets/images/vpi/hero--small.jpg");
+    }
+  }
+}
+@media @tablet {
+}
+@media @tablet-landscape {
+  .vpi {
+    .box-2 {
+      //background-image: url("/assets/images/vpi/hero--medium.jpg");
+    }
+  }
+}
+@media @laptop {
+}
+@media @desktop {
+  .vpi {
+    .box-2 {
+      //background-image: url("/assets/images/vpi/hero--large.jpg");
+    }
+  }
+}
+@media @desktop-lg {
+}
+
+/* {
     background: url("/assets/images/vpi/bg--small.jpg") center bottom no-repeat;
   }
   @mixin atMedium {
@@ -14,12 +55,10 @@
     background: url("/assets/images/vpi/bg--large.jpg") center bottom no-repeat;
   }
     }
-  */
-    .dally-dally {
-      height: 600px;
-      overflow-y: scroll;
-      overflow-x: hidden;
-      box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.5);
-    }
-  }
-}
+<picture>
+            <source sizes="540px" srcSet="../assets/images/vpi/hero--large.jpg 540w" media="(min-width: 1200px)" />
+            <source sizes="470px" srcSet="../assets/images/vpi/hero--medium.jpg 470w" media="(min-width: 1024px)" />
+            <source sizes="360px" srcSet="../assets/images/vpi/hero--small.jpg 360w" media="(min-width: 800px)" />
+            <img srcSet="../assets/images/vpi/hero--default.jpg 320w" alt="" />
+          </picture>
+*/

@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from "react"
-
+const disneyMeetingsLogoLarge = "../assets/images/disney-meetings/logo--large.png 250w"
+const disneyMeetingsLogoSmall = "../assets/images/disney-meetings/logo--small.png 200w"
+const disneyMeetingsLogoDefault = "../assets/images/disney-meetings/logo--default.png 150w"
+const disneyMeetingsHeroLarge = "../assets/images/disney-meetings/hero--large.jpg 540w"
+const disneyMeetingsHeroMedium = "../assets/images/disney-meetings/hero--medium.jpg 470w"
+const disneyMeetingsHeroSmall = "../assets/images/disney-meetings/hero--small.jpg 360w"
+const disneyMeetingsHeroDefault = "../assets/images/disney-meetings/hero--default.jpg 320w"
 function DisneyMeetings() {
+  let alt = "Walt Disney Meetings"
   return (
     <div className="wrapper">
-      <div className="box-2">
-        <div className="logo">{/*
-<picture>
-                <img srcSet="../assets/images/disney/logo-03--default.png" alt="Walt Disney Meetings" />
-              </picture>
-*/}</div>
+      <div className="box-1">
+        <div className="logo">
+          <picture>
+            <source sizes="540px" srcSet={disneyMeetingsLogoLarge} media="(min-width: 1024px)" />
+            <source sizes="360px" srcSet={disneyMeetingsLogoSmall} media="(min-width: 800px)" />
+            <img srcSet={disneyMeetingsLogoDefault} alt={alt} />
+          </picture>
+        </div>
         <div className="content">
-          <h1 className="title">Walt Disney Meetings</h1>
+          <h1>{alt}</h1>
           <h2 className="subtitle">
             <a href="https://www.disneymeetings.com" target="_blank">
               disneymeetings.com
@@ -28,14 +37,18 @@ function DisneyMeetings() {
           <p className="tools"></p>
         </div>
       </div>
-      <div className="box-1">{/*
-<picture>
-              <source sizes="540px" srcSet="../assets/images/disney/hero-03--large.jpg 540w" media="(min-width: 1200px)" />
-              <source sizes="470px" srcSet="../assets/images/disney/hero-03--medium.jpg 470w" media="(min-width: 1024px)" />
-              <source sizes="360px" srcSet="../assets/images/disney/hero-03--small.jpg 360w" media="(min-width: 800px)" />
-              <img srcSet="../assets/images/disney/hero-03--small.jpg 320w" alt="Walt Disney Weddings" />
+      <div className="box-2">
+        <div className="wrapper">
+          <div className="content">
+            <picture>
+              <source sizes="540px" srcSet={disneyMeetingsHeroLarge} media="(min-width: 1200px)" />
+              <source sizes="470px" srcSet={disneyMeetingsHeroMedium} media="(min-width: 1024px)" />
+              <source sizes="360px" srcSet={disneyMeetingsHeroSmall} media="(min-width: 800px)" />
+              <img srcSet={disneyMeetingsHeroDefault} alt={alt} />
             </picture>
-*/}</div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

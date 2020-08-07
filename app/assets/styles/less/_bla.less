@@ -8,19 +8,56 @@
     h1 {
       display: none;
     }
+    .logo {
+      background-image: url("/assets/images/black-and-veatch/logo--default.svg");
+      background-size: cover;
+      width: 300px;
+      height: 200px;
+    }
     color: white;
+    .box-2 {
+      .content {
+        //background-image: url("/assets/images/black-and-veatch/hero--default.jpg");
+        //background-size: cover;
+      }
+    }
+  }
+}
+@media @mobile-landscape {
+  .black-and-veatch {
     .box-1 {
       width: 45%;
-      float: left;
-      padding: 1em 0;
-      .logo {
-        background: url("/assets/images/black-and-veatch/logo--default.svg");
-      }
     }
     .box-2 {
       width: 45%;
       float: right;
-      padding: 1em 0;
+      .content {
+        //background-image: url("/assets/images/black-and-veatch/hero--small.jpg");
+      }
     }
   }
+}
+@media @tablet {
+}
+@media @tablet-landscape {
+  .black-and-veatch {
+    .box-2 {
+      .content {
+        //background-image: url("/assets/images/black-and-veatch/hero--medium.jpg");
+      }
+    }
+  }
+}
+@media @laptop {
+}
+@media @desktop {
+  .black-and-veatch {
+    .box-2 {
+      .content {
+        //background-image: url("/assets/images/black-and-veatch/hero--large.jpg");
+      }
+    }
+  }
+}
+@media @desktop-lg {
 }

@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from "react"
-
+const educationDevelopmentCenterLogoLarge = "../assets/images/education-development-center/logo--large.png 250w"
+const educationDevelopmentCenterLogoSmall = "../assets/images/education-development-center/logo--small.png 200w"
+const educationDevelopmentCenterLogoDefault = "../assets/images/education-development-center/logo--default.png 150w"
+const educationDevelopmentCenterHeroLarge = "../assets/images/education-development-center/hero--large.jpg 540w"
+const educationDevelopmentCenterHeroMedium = "../assets/images/education-development-center/hero--medium.jpg 470w"
+const educationDevelopmentCenterHeroSmall = "../assets/images/education-development-center/hero--small.jpg 360w"
+const educationDevelopmentCenterHeroDefault = "../assets/images/education-development-center/hero--default.jpg 320w"
 function EducationDevelopmentCenter() {
+  let alt = "Education Development Center (EDC)"
   return (
     <div className="wrapper">
-      <div className="box-2">
-        <div className="logo">{/*
-<picture>
-            <source sizes="250px" srcSet="../assets/images/edc/logo--large.png 250w" media="(min-width: 1024px)" />
-            <source sizes="200px" srcSet="../assets/images/edc/logo--small.png 200w" media="(min-width: 800px)" />
-            <img srcSet="../assets/images/edc/logo--default.png 150w" alt="" />
+      <div className="box-1">
+        <div className="logo">
+          <picture>
+            <source sizes="540px" srcSet={educationDevelopmentCenterLogoLarge} media="(min-width: 1024px)" />
+            <source sizes="360px" srcSet={educationDevelopmentCenterLogoSmall} media="(min-width: 800px)" />
+            <img srcSet={educationDevelopmentCenterLogoDefault} alt={alt} />
           </picture>
-*/}</div>
+        </div>
         <div className="text-content">
-          <h1 className="title">Education Development Center (EDC)</h1>
+          <h1>{alt}</h1>
           <h2 className="subtitle">Intranet</h2>
           <h3 className="dates">May 2016 - Jan 2017</h3>
           <h2 className="subtitle"></h2>
@@ -27,14 +34,18 @@ function EducationDevelopmentCenter() {
           <p className="tools"></p>
         </div>
       </div>
-      <div className="box-1">{/*
-<picture>
-          <source sizes="540px" srcSet="../assets/images/edc/hero--large.jpg 540w" media="(min-width: 1200px)" />
-          <source sizes="470px" srcSet="../assets/images/edc/hero--medium.jpg 470w" media="(min-width: 1024px)" />
-          <source sizes="360px" srcSet="../assets/images/edc/hero--small.jpg 360w" media="(min-width: 800px)" />
-          <img srcSet="../assets/images/edc/hero--default.jpg 320w" alt="" />
-        </picture>
-*/}</div>
+      <div className="box-2">
+        <div className="wrapper">
+          <div className="content">
+            <picture>
+              <source sizes="540px" srcSet={educationDevelopmentCenterHeroLarge} media="(min-width: 1200px)" />
+              <source sizes="470px" srcSet={educationDevelopmentCenterHeroMedium} media="(min-width: 1024px)" />
+              <source sizes="360px" srcSet={educationDevelopmentCenterHeroSmall} media="(min-width: 800px)" />
+              <img srcSet={educationDevelopmentCenterHeroDefault} alt={alt} />
+            </picture>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

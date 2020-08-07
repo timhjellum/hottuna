@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from "react"
-
+const episcopalChurchLogoLarge = "../assets/images/episcopal-church/logo--large.png 250w"
+const episcopalChurchLogoSmall = "../assets/images/episcopal-church/logo--small.png 200w"
+const episcopalChurchLogoDefault = "../assets/images/episcopal-church/logo--default.png 150w"
+const episcopalChurchHeroLarge = "../assets/images/episcopal-church/hero--large.jpg 540w"
+const episcopalChurchHeroMedium = "../assets/images/episcopal-church/hero--medium.jpg 470w"
+const episcopalChurchHeroSmall = "../assets/images/episcopal-church/hero--small.jpg 360w"
+const episcopalChurchHeroDefault = "../assets/images/episcopal-church/hero--default.jpg 320w"
 function EpiscopalChurch() {
+  let alt = "Episcopal Church"
   return (
     <div className="wrapper">
-      <div className="box-2">
-        <div className="logo">{/*
-<picture>
-            <source sizes="250px" srcSet="../assets/images/episcopal-church/logo--large.png 250w" media="(min-width: 1024px)" />
-            <source sizes="200px" srcSet="../assets/images/episcopal-church/logo--small.png 200w" media="(min-width: 800px)" />
-            <img srcSet="../assets/images/episcopal-church/logo--default.png 150w" alt="" />
+      <div className="box-1">
+        <div className="logo">
+          <picture>
+            <source sizes="540px" srcSet={episcopalChurchLogoLarge} media="(min-width: 1024px)" />
+            <source sizes="360px" srcSet={episcopalChurchLogoSmall} media="(min-width: 800px)" />
+            <img srcSet={episcopalChurchLogoDefault} alt={alt} />
           </picture>
-*/}</div>
+        </div>
         <div className="text-content">
-          <h1 className="title">Episcopal Church</h1>
+          <h1>{alt}</h1>
           <h2 className="subtitle">
             <a href="https://www.churchpublishing.org/">churchpublishing.org</a>
           </h2>
@@ -29,14 +36,18 @@ function EpiscopalChurch() {
           <p className="tools"></p>
         </div>
       </div>
-      <div className="box-1">{/*
-<picture>
-          <source sizes="540px" srcSet="../assets/images/episcopal-church/hero--large.jpg 540w" media="(min-width: 1200px)" />
-          <source sizes="470px" srcSet="../assets/images/episcopal-church/hero--medium.jpg 470w" media="(min-width: 1024px)" />
-          <source sizes="360px" srcSet="../assets/images/episcopal-church/heroh--small.jpg 360w" media="(min-width: 800px)" />
-          <img srcSet="../assets/images/episcopal-church/hero--default.jpg 320w" alt="" />
-        </picture>
-*/}</div>
+      <div className="box-2">
+        <div className="wrapper">
+          <div className="content">
+            <picture>
+              <source sizes="540px" srcSet={episcopalChurchHeroLarge} media="(min-width: 1200px)" />
+              <source sizes="470px" srcSet={episcopalChurchHeroMedium} media="(min-width: 1024px)" />
+              <source sizes="360px" srcSet={episcopalChurchHeroSmall} media="(min-width: 800px)" />
+              <img srcSet={episcopalChurchHeroDefault} alt={alt} />
+            </picture>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

@@ -4,23 +4,18 @@ function BlackAndVeatch() {
   //const blackAndVeatchLogoLarge = "../assets/images/black-and-veatch/logo--large.png 250w"
   //const blackAndVeatchLogoSmall = "../assets/images/black-and-veatch/logo--small.png 200w"
   //const blackAndVeatchLogoDefault = "../assets/images/black-and-veatch/logo--default.png 150w"
-
   const blackAndVeatchHeroLarge = "../assets/images/black-and-veatch/hero--large.jpg 540w"
   const blackAndVeatchHeroMedium = "../assets/images/black-and-veatch/hero--medium.jpg 470w"
   const blackAndVeatchHeroSmall = "../assets/images/black-and-veatch/hero--small.jpg 360w"
   const blackAndVeatchHeroDefault = "../assets/images/black-and-veatch/hero--default.jpg 320w"
+  require("svg-url-loader!../assets/images/black-and-veatch/logo--default.svg")
+  let alt = "Black and Veatch"
   return (
     <div className="wrapper">
       <div className="box-1">
-        <div className="logo">{/*
-		  <picture>
-            <source sizes="250px" srcSet={blackAndVeatchLogoLarge} media="(min-width: 1024px)" />
-            <source sizes="200px" srcSet={blackAndVeatchLogoSmall} media="(min-width: 800px)" />
-            <img srcSet={blackAndVeatchLogoDefault} alt="Black and Veatch" />
-		  </picture>
-		  */}</div>
+        <div className="logo"></div>
         <div className="text-content">
-          <h1 className="title">Black and Veatch</h1>
+          <h1>{alt}</h1>
           <h3 className="dates"></h3>
           <h2 className="my-title">Lead SharePoint User Interface Developer</h2>
           <p className="description">Engaged mid-project to remedy and implement the branding and design of a SharePoint implementation.</p>
@@ -34,12 +29,16 @@ function BlackAndVeatch() {
         </div>
       </div>
       <div className="box-2">
-        <picture>
-          <source sizes="540px" srcSet={blackAndVeatchHeroLarge} media="(min-width: 1200px)" />
-          <source sizes="470px" srcSet={blackAndVeatchHeroMedium} media="(min-width: 1024px)" />
-          <source sizes="360px" srcSet={blackAndVeatchHeroSmall} media="(min-width: 800px)" />
-          <img srcSet={blackAndVeatchHeroDefault} alt="Black and Veatch" />
-        </picture>
+        <div className="wrapper">
+          <div className="content">
+            <picture>
+              <source sizes="540px" srcSet={blackAndVeatchHeroLarge} media="(min-width: 1200px)" />
+              <source sizes="470px" srcSet={blackAndVeatchHeroMedium} media="(min-width: 1024px)" />
+              <source sizes="360px" srcSet={blackAndVeatchHeroSmall} media="(min-width: 800px)" />
+              <img srcSet={blackAndVeatchHeroDefault} alt={alt} />
+            </picture>
+          </div>
+        </div>
       </div>
     </div>
   )

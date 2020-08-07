@@ -9,23 +9,55 @@
     a {
       color: #2d3091;
     }
-    .dally-dally {
-      height: 600px;
-      overflow-y: scroll;
-      overflow-x: hidden;
-      box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.5);
+    .box-1 {
     }
-    .dally {
-      height: 600px;
-      padding: 40px;
-      background-color: #fff;
-      position: relative;
-      margin-left: auto;
-      margin-right: auto;
-      border: 1px solid #d5d5d5;
-      border-radius: 10px;
-      -webkit-border-radius: 10px;
-      -moz-border-radius: 10px;
+    .box-2 {
+      //background-image: url("/assets/images/fastsigns/hero--default.jpg");
+      background-size: cover;
     }
   }
 }
+@media @mobile-landscape {
+  .fastsigns {
+    background: #454545 url("/assets/images/fastsigns/bg--small.jpg") center top no-repeat;
+    .box-1 {
+      width: 45%;
+    }
+    .box-2 {
+      width: 45%;
+      float: right;
+      //background-image: url("/assets/images/fastsigns/hero--small.jpg");
+    }
+  }
+}
+@media @tablet {
+}
+@media @tablet-landscape {
+  .fastsigns {
+    background: #454545 url("/assets/images/fastsigns/bg--medium.jpg") center top no-repeat;
+    .box-2 {
+      //background-image: url("/assets/images/fastsigns/hero--medium.jpg");
+    }
+  }
+}
+@media @laptop {
+}
+@media @desktop {
+  .fastsigns {
+    background: #454545 url("/assets/images/fastsigns/bg--large.jpg") center top no-repeat;
+    .box-2 {
+      //background-image: url("/assets/images/fastsigns/hero--large.jpg");
+    }
+  }
+}
+@media @desktop-lg {
+}
+
+/*
+<picture>
+          <source sizes="540px" srcSet="../assets/images/fastsigns/hero--large.jpg 540w" media="(min-width: 1200px)" />
+          <source sizes="470px" srcSet="../assets/images/fastsigns/hero--medium.jpg 470w" media="(min-width: 1024px)" />
+          <source sizes="360px" srcSet="../assets/images/fastsigns/hero--small.jpg 360w" media="(min-width: 800px)" />
+          <img srcSet="../assets/images/fastsigns/hero--default.jpg 320w" alt="" />
+        </picture>
+*/

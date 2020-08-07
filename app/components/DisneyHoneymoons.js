@@ -1,24 +1,31 @@
 import React, { useEffect, useState } from "react"
-
+const disneyHoneymoonsLogoLarge = "../assets/images/disney-honeymoons/logo--large.png 250w"
+const disneyHoneymoonsLogoSmall = "../assets/images/disney-honeymoons/logo--small.png 200w"
+const disneyHoneymoonsLogoDefault = "../assets/images/disney-honeymoons/logo--default.png 150w"
+const disneyHoneymoonsHeroLarge = "../assets/images/disney-honeymoons/hero--large.jpg 540w"
+const disneyHoneymoonsHeroMedium = "../assets/images/disney-honeymoons/hero--medium.jpg 470w"
+const disneyHoneymoonsHeroSmall = "../assets/images/disney-honeymoons/hero--small.jpg 360w"
+const disneyHoneymoonsHeroDefault = "../assets/images/disney-honeymoons/hero--default.jpg 320w"
 function DisneyHoneymoons() {
+  let alt = "Walt Disney Honeymoons"
   return (
     <div className="wrapper">
-      <div className="box-2">
-        <div className="logo">{/*
-<picture>
-                <source sizes="250px" srcSet="../assets/images/disney/logo-01--large.png 250w" media="(min-width: 1024px)" />
-                <source sizes="200px" srcSet="../assets/images/disney/logo-01--small.png 200w" media="(min-width: 800px)" />
-                <img srcSet="../assets/images/disney/logo-01--default.png 150w" alt="Walt Disney Honeymoons" />
-              </picture>
-*/}</div>
+      <div className="box-1">
+        <div className="logo">
+          <picture>
+            <source sizes="540px" srcSet={disneyHoneymoonsLogoLarge} media="(min-width: 1024px)" />
+            <source sizes="360px" srcSet={disneyHoneymoonsLogoSmall} media="(min-width: 800px)" />
+            <img srcSet={disneyHoneymoonsLogoDefault} alt={alt} />
+          </picture>
+        </div>
         <div className="content">
-          <h1 className="title">Walt Disney Honeymoons</h1>
+          <h1>{alt}</h1>
           <h2 className="subtitle">
             <a href="http://disneyweddings.disney.go.com/honeymoons" target="_blank">
               disneyhoneymoons.com
             </a>
           </h2>
-          <h3 className="dates">September 2007 â€“ January 2009</h3>
+          <h3 className="dates">September 2007 - January 2009</h3>
           <h2 className="subtitle">
             <a href="https://www.disneyweddings.com/" target="_blank">
               disneyweddings.com
@@ -36,14 +43,18 @@ function DisneyHoneymoons() {
           <p className="tools"></p>
         </div>
       </div>
-      <div className="box-1">{/*
-<picture>
-              <source sizes="540px" srcSet="../assets/images/disney/hero-02--large.jpg 540w" media="(min-width: 1200px)" />
-              <source sizes="470px" srcSet="../assets/images/disney/hero-02--medium.jpg 470w" media="(min-width: 1024px)" />
-              <source sizes="360px" srcSet="../assets/images/disney/hero-02--small.jpg 360w" media="(min-width: 800px)" />
-              <img srcSet="../assets/images/disney/hero-02--small.jpg 320w" alt="Walt Disney Weddings" />
+      <div className="box-2">
+        <div className="wrapper">
+          <div className="content">
+            <picture>
+              <source sizes="540px" srcSet={disneyHoneymoonsHeroLarge} media="(min-width: 1200px)" />
+              <source sizes="470px" srcSet={disneyHoneymoonsHeroMedium} media="(min-width: 1024px)" />
+              <source sizes="360px" srcSet={disneyHoneymoonsHeroSmall} media="(min-width: 800px)" />
+              <img srcSet={disneyHoneymoonsHeroDefault} alt={alt} />
             </picture>
-*/}</div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

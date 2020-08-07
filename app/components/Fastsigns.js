@@ -1,18 +1,26 @@
 import React, { useEffect, useState } from "react"
-
+const fastsignsLogoLarge = "../assets/images/fastsigns/logo--large.png 250w"
+const fastsignsLogoSmall = "../assets/images/fastsigns/logo--small.png 200w"
+const fastsignsLogoDefault = "../assets/images/fastsigns/logo--default.png 150w"
+const fastsignsHeroLarge = "../assets/images/fastsigns/hero--large.jpg 540w"
+const fastsignsHeroMedium = "../assets/images/fastsigns/hero--medium.jpg 470w"
+const fastsignsHeroSmall = "../assets/images/fastsigns/hero--small.jpg 360w"
+const fastsignsHeroDefault = "../assets/images/fastsigns/hero--default.jpg 320w"
 function Fastsigns() {
+  let alt = "FASTSIGNS"
   return (
     <div className="wrapper">
-      <div className="box-2">
-        <div className="logo">{/*
-<picture>
-            <source sizes="250px" srcSet="../assets/images/fastsigns/logo--large.png 250w" media="(min-width: 1024px)" />
-            <source sizes="200px" srcSet="../assets/images/fastsigns/logo--small.png 200w" media="(min-width: 800px)" />
-            <img srcSet="../assets/images/fastsigns/logo--default.png 150w" alt="" />
+      <div className="box-1">
+        <div className="logo">
+          {" "}
+          <picture>
+            <source sizes="540px" srcSet={fastsignsLogoLarge} media="(min-width: 1024px)" />
+            <source sizes="360px" srcSet={fastsignsLogoSmall} media="(min-width: 800px)" />
+            <img srcSet={fastsignsLogoDefault} alt={alt} />
           </picture>
-*/}</div>
+        </div>
         <div className="text-content">
-          <h1 className="title">FASTSIGNS</h1>
+          <h1>{alt}</h1>
           <h2 className="subtitle">
             <a href="http://www.fastsigns.com" target="_blank">
               fastsigns.com
@@ -81,14 +89,19 @@ function Fastsigns() {
           <p className="tools"></p>
         </div>
       </div>
-      <div className="box-1">{/*
-<picture>
-          <source sizes="540px" srcSet="../assets/images/fastsigns/hero--large.jpg 540w" media="(min-width: 1200px)" />
-          <source sizes="470px" srcSet="../assets/images/fastsigns/hero--medium.jpg 470w" media="(min-width: 1024px)" />
-          <source sizes="360px" srcSet="../assets/images/fastsigns/hero--small.jpg 360w" media="(min-width: 800px)" />
-          <img srcSet="../assets/images/fastsigns/hero--default.jpg 320w" alt="" />
-        </picture>
-*/}</div>
+      <div className="box-2">
+        {" "}
+        <div className="wrapper">
+          <div className="content">
+            <picture>
+              <source sizes="540px" srcSet={fastsignsHeroLarge} media="(min-width: 1200px)" />
+              <source sizes="470px" srcSet={fastsignsHeroMedium} media="(min-width: 1024px)" />
+              <source sizes="360px" srcSet={fastsignsHeroSmall} media="(min-width: 800px)" />
+              <img srcSet={fastsignsHeroDefault} alt={alt} />
+            </picture>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
