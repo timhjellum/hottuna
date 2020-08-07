@@ -31,10 +31,23 @@ img {
     padding: 1em 0;
   }
   .box-2 {
+    //display: none;
+  }
+}
+@media @mobile-landscape {
+}
+@media @tablet {
+  .box-1 {
+    width: 45%;
+  }
+  .box-2 {
+    width: 45%;
+    float: right;
     width: 100%;
     height: 100vh;
     float: left;
     padding: 0;
+    display: block;
     .wrapper {
       overflow: auto;
       height: 90vh;
@@ -45,17 +58,9 @@ img {
       overflow-y: auto;
     }
   }
-}
-@media @mobile-landscape {
-  .box-1 {
-    width: 45%;
+  .modal-button {
+    display: block;
   }
-  .box-2 {
-    width: 45%;
-    float: right;
-  }
-}
-@media @tablet {
 }
 @media @tablet-landscape {
 }
@@ -63,6 +68,9 @@ img {
   .wrapper {
     width: 90%;
     margin: 0 5%;
+  }
+  .modal-button {
+    display: none;
   }
 }
 @media @desktop {
@@ -77,7 +85,7 @@ img {
   position: relative;
 }
 
-@import "https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap";
+//@import "https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap";
 
 /*
 

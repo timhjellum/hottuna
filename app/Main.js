@@ -33,13 +33,23 @@ import WyomingWorkforceServices from "./components/WyomingWorkforceServices"
 
 import "./assets/styles/styles.css"
 
+import Modal from "react-modal"
+
+Modal.setAppElement("#app")
+
 class Main extends Component {
   constructor(props) {
     super(props)
     this.scrollToTop = this.scrollToTop.bind(this)
+    //this.state = {
+    //  isDesktop: false //This is where I am having problems
+    //}
+    //this.updatePredicate = this.updatePredicate.bind(this)
   }
-
   componentDidMount() {
+    //this.updatePredicate()
+    //window.addEventListener("resize", this.updatePredicate)
+
     Events.scrollEvent.register("begin", function () {
       console.log("begin", arguments)
     })
@@ -103,6 +113,15 @@ class Main extends Component {
       false
     )
   }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updatePredicate)
+  }
+
+  updatePredicate() {
+    this.setState({ isDesktop: window.innerWidth > 1450 })
+  }
+
   scrollToTop() {
     scroll.scrollToTop()
   }
@@ -144,6 +163,7 @@ class Main extends Component {
     Events.scrollEvent.remove("end")
   }
   render() {
+    //const isDesktop = this.state.isDesktop
     return (
       <div className="page-wrapper">
         {/*
@@ -166,8 +186,8 @@ class Main extends Component {
             </li>
           </ul>
 		</nav>
-		*/}
 
+        <div>{isDesktop ? <div>I show on 1451px or higher</div> : <div>I show on 1450px or lower</div>}</div>		*/}
         <div name="black-and-veatch" className="section black-and-veatch">
           <BlackAndVeatch />
         </div>
