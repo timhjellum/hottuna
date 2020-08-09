@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from "react"
+import Modal from "./Modal"
+import useViewport from "./useViewport"
+import DisneyNav from "./DisneyNav"
+import DisneyWeddingsContent from "./DisneyWeddingsContent"
 const disneyWeddingsLogoLarge = "../assets/images/disney-weddings/logo--large.png 250w"
 const disneyWeddingsLogoSmall = "../assets/images/disney-weddings/logo--small.png 200w"
 const disneyWeddingsLogoDefault = "../assets/images/disney-weddings/logo--default.png 150w"
@@ -6,10 +10,12 @@ const disneyWeddingsHeroLarge = "../assets/images/disney-weddings/hero--large.jp
 const disneyWeddingsHeroMedium = "../assets/images/disney-weddings/hero--medium.jpg 470w"
 const disneyWeddingsHeroSmall = "../assets/images/disney-weddings/hero--small.jpg 360w"
 const disneyWeddingsHeroDefault = "../assets/images/disney-weddings/hero--default.jpg 320w"
-function DisneyWeddings() {
+function DisneyWeddings(props) {
   let alt = "Walt Disney Weddings"
+  const { width } = useViewport()
+  const breakpoint = 400
   return (
-    <div className="wrapper">
+    <div className="wrapper" id="DisneyWeddings">
       <div className="box-1">
         <div className="logo">
           <picture>
@@ -38,17 +44,15 @@ function DisneyWeddings() {
         </div>
       </div>
       <div className="box-2">
-        <div className="wrapper">
-          <div className="content">
-            <picture>
-              <source sizes="540px" srcSet={disneyWeddingsHeroLarge} media="(min-width: 1200px)" />
-              <source sizes="470px" srcSet={disneyWeddingsHeroMedium} media="(min-width: 1024px)" />
-              <source sizes="360px" srcSet={disneyWeddingsHeroSmall} media="(min-width: 800px)" />
-              <img srcSet={disneyWeddingsHeroDefault} alt={alt} />
-            </picture>
-          </div>
-        </div>
+        {width < breakpoint ? (
+          <Modal>
+            <DisneyWeddingsContent />
+          </Modal>
+        ) : (
+          <DisneyWeddingsContent />
+        )}
       </div>
+      <DisneyNav />
     </div>
   )
 }

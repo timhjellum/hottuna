@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react"
+import Modal from "./Modal"
+import useViewport from "./useViewport"
+import NewmontMiningContent from "./NewmontMiningContent"
 const newmontMiningLogoLarge = "../assets/images/newmont-mining/logo--large.png 250w"
 const newmontMiningLogoSmall = "../assets/images/newmont-mining/logo--small.png 200w"
 const newmontMiningLogoDefault = "../assets/images/newmont-mining/logo--default.png 150w"
-const newmontMiningHeroLarge = "../assets/images/newmont-mining/hero--large.jpg 540w"
-const newmontMiningHeroMedium = "../assets/images/newmont-mining/hero--medium.jpg 470w"
-const newmontMiningHeroSmall = "../assets/images/newmont-mining/hero--small.jpg 360w"
-const newmontMiningHeroDefault = "../assets/images/newmont-mining/hero--default.jpg 320w"
-function NewmontMining() {
+function NewmontMining(props) {
   let alt = "Newmont Mining"
+  const { width } = useViewport()
+  const breakpoint = 400
   return (
     <div className="wrapper">
       <div className="box-1">
@@ -35,17 +36,13 @@ function NewmontMining() {
         </div>
       </div>
       <div className="box-2">
-        {" "}
-        <div className="wrapper">
-          <div className="content">
-            <picture>
-              <source sizes="540px" srcSet={newmontMiningHeroLarge} media="(min-width: 1200px)" />
-              <source sizes="470px" srcSet={newmontMiningHeroMedium} media="(min-width: 1024px)" />
-              <source sizes="360px" srcSet={newmontMiningHeroSmall} media="(min-width: 800px)" />
-              <img srcSet={newmontMiningHeroDefault} alt={alt} />
-            </picture>
-          </div>
-        </div>
+        {width < breakpoint ? (
+          <Modal>
+            <NewmontMiningContent />
+          </Modal>
+        ) : (
+          <NewmontMiningContent />
+        )}
       </div>
     </div>
   )

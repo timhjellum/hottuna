@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react"
+import Modal from "./Modal"
+import useViewport from "./useViewport"
+import DiginextContent from "./DiginextContent"
 
-function Diginext() {
+function Diginext(props) {
   const diginextLogoLarge = "../assets/images/diginext/logo--large.png 250w"
   const diginextLogoSmall = "../assets/images/diginext/logo--small.png 200w"
   const diginextLogoDefault = "../assets/images/diginext/logo--default.png 150w"
@@ -9,6 +12,8 @@ function Diginext() {
   const diginextHeroSmall = "../assets/images/diginext/hero--small.jpg 360w"
   const diginextHeroDefault = "../assets/images/diginext/hero--default.jpg 320w"
   let alt = "Diginext"
+  const { width } = useViewport()
+  const breakpoint = 400
   return (
     <div className="wrapper">
       <div className="box-1">
@@ -41,17 +46,13 @@ function Diginext() {
         </div>
       </div>
       <div className="box-2">
-        {" "}
-        <div className="wrapper">
-          <div className="content">
-            <picture>
-              <source sizes="540px" srcSet={diginextHeroLarge} media="(min-width: 1200px)" />
-              <source sizes="470px" srcSet={diginextHeroMedium} media="(min-width: 1024px)" />
-              <source sizes="360px" srcSet={diginextHeroSmall} media="(min-width: 800px)" />
-              <img srcSet={diginextHeroDefault} alt={alt} />
-            </picture>
-          </div>
-        </div>
+        {width < breakpoint ? (
+          <Modal>
+            <DiginextContent />
+          </Modal>
+        ) : (
+          <DiginextContent />
+        )}
       </div>
     </div>
   )

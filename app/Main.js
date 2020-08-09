@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component, useState } from "react"
 import ReactDOM from "react-dom"
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from "react-scroll"
 // https://www.npmjs.com/package/react-scroll
@@ -7,10 +7,7 @@ import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, 
 import BlackAndVeatch from "./components/BlackAndVeatch"
 import BostonMarket from "./components/BostonMarket"
 import Diginext from "./components/Diginext"
-import DisneyWeddings from "./components/DisneyWeddings"
-import DisneyMeetings from "./components/DisneyMeetings"
-import DisneyHoneymoons from "./components/DisneyHoneymoons"
-import DisneyMaps from "./components/DisneyMaps"
+import Disney from "./components/Disney"
 import EducationDevelopmentCenter from "./components/EducationDevelopmentCenter"
 import EpiscopalChurch from "./components/EpiscopalChurch"
 import Fastsigns from "./components/Fastsigns"
@@ -41,15 +38,8 @@ class Main extends Component {
   constructor(props) {
     super(props)
     this.scrollToTop = this.scrollToTop.bind(this)
-    //this.state = {
-    //  isDesktop: false //This is where I am having problems
-    //}
-    //this.updatePredicate = this.updatePredicate.bind(this)
   }
   componentDidMount() {
-    //this.updatePredicate()
-    //window.addEventListener("resize", this.updatePredicate)
-
     Events.scrollEvent.register("begin", function () {
       console.log("begin", arguments)
     })
@@ -58,6 +48,22 @@ class Main extends Component {
       console.log("end", arguments)
     })
 
+    //var actualInnerWidth = document.body.clientWidth;     // El. width minus scrollbar width
+    //var actualInnerWidth = document.body.scrollWidth;     // El. width minus scrollbar width
+
+    //var width = window.innerWidth
+    var width = document.body.clientWidth
+    var item = document.querySelectorAll(".item")
+
+    item.forEach(myFunction)
+
+    function myFunction(item, index) {
+      item.style.width = width + "px"
+    }
+    var disneyContainer = document.querySelector(".disney-container")
+    disneyContainer.style.width = width * 4 + "px"
+    //var disneySection = document.querySelector(".disney")
+    //disneySection.style.width = width * 4 + "px"
     // Setup isScrolling variable
 
     // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
@@ -114,14 +120,6 @@ class Main extends Component {
     )
   }
 
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.updatePredicate)
-  }
-
-  updatePredicate() {
-    this.setState({ isDesktop: window.innerWidth > 1450 })
-  }
-
   scrollToTop() {
     scroll.scrollToTop()
   }
@@ -163,10 +161,9 @@ class Main extends Component {
     Events.scrollEvent.remove("end")
   }
   render() {
-    //const isDesktop = this.state.isDesktop
     return (
       <div className="page-wrapper">
-        {/*
+        {/*        
 		<nav>
           <ul>
             <li>
@@ -186,8 +183,7 @@ class Main extends Component {
             </li>
           </ul>
 		</nav>
-
-        <div>{isDesktop ? <div>I show on 1451px or higher</div> : <div>I show on 1450px or lower</div>}</div>		*/}
+*/}
         <div name="black-and-veatch" className="section black-and-veatch">
           <BlackAndVeatch />
         </div>
@@ -197,17 +193,8 @@ class Main extends Component {
         <div name="diginext" className="section diginext">
           <Diginext />
         </div>
-        <div name="disney-weddings" className="section disney-weddings">
-          <DisneyWeddings />
-        </div>
-        <div name="disney-meetings" className="section disney-meetings">
-          <DisneyMeetings />
-        </div>
-        <div name="disney-honeymoons" className="section disney-honeymoons">
-          <DisneyHoneymoons />
-        </div>
-        <div name="disney-maps" className="section disney-maps">
-          <DisneyMaps />
+        <div name="disney" className="section disney">
+          <Disney />
         </div>
         <div name="edc" className="section edc">
           <EducationDevelopmentCenter />

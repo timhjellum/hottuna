@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react"
+import Modal from "./Modal"
+import useViewport from "./useViewport"
+import WyomingWorkforceServicesContent from "./WyomingWorkforceServicesContent"
 const wyomingWorkforceServicesLogoLarge = "../assets/images/wyoming-workforce-services/logo--large.png 250w"
 const wyomingWorkforceServicesLogoSmall = "../assets/images/wyoming-workforce-services/logo--small.png 200w"
 const wyomingWorkforceServicesLogoDefault = "../assets/images/wyoming-workforce-services/logo--default.png 150w"
@@ -6,8 +9,11 @@ const wyomingWorkforceServicesHeroLarge = "../assets/images/wyoming-workforce-se
 const wyomingWorkforceServicesHeroMedium = "../assets/images/wyoming-workforce-services/hero--medium.jpg 470w"
 const wyomingWorkforceServicesHeroSmall = "../assets/images/wyoming-workforce-services/hero--small.jpg 360w"
 const wyomingWorkforceServicesHeroDefault = "../assets/images/wyoming-workforce-services/hero--default.jpg 320w"
-function WyomingWorkforceServices() {
+
+function WyomingWorkforceServices(props) {
   let alt = "Wyoming Workforce Services"
+  const { width } = useViewport()
+  const breakpoint = 400
   return (
     <div className="wrapper">
       <div className="box-1">
@@ -40,16 +46,13 @@ function WyomingWorkforceServices() {
         </div>
       </div>
       <div className="box-2">
-        <div className="wrapper">
-          <div className="content">
-            <picture>
-              <source sizes="540px" srcSet={wyomingWorkforceServicesHeroLarge} media="(min-width: 1200px)" />
-              <source sizes="470px" srcSet={wyomingWorkforceServicesHeroMedium} media="(min-width: 1024px)" />
-              <source sizes="360px" srcSet={wyomingWorkforceServicesHeroSmall} media="(min-width: 800px)" />
-              <img srcSet={wyomingWorkforceServicesHeroDefault} alt={alt} />
-            </picture>
-          </div>
-        </div>
+        {width < breakpoint ? (
+          <Modal>
+            <WyomingWorkforceServicesContent />
+          </Modal>
+        ) : (
+          <WyomingWorkforceServicesContent />
+        )}
       </div>
     </div>
   )

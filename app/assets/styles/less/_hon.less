@@ -1,87 +1,36 @@
 @media @mobile {
   .honeywell {
     color: #fff;
+    background: #000 url("/assets/images/honeywell/bg--small.jpg") center bottom no-repeat;
     h1 {
       display: none;
     }
-    .box-2 {
-      //background-image: url("/assets/images/honeywell/hero--default.jpg");
-      background-size: cover;
+    .logo {
+      picture {
+        img {
+          width: 50%;
+        }
+      }
     }
   }
 }
 @media @mobile-landscape {
   .honeywell {
-    .box-1 {
-      width: 45%;
-    }
-    .box-2 {
-      width: 45%;
-      float: right;
-      //background-image: url("/assets/images/honeywell/hero--small.jpg");
-    }
   }
 }
 @media @tablet {
 }
 @media @tablet-landscape {
   .honeywell {
-    .box-2 {
-      //background-image: url("/assets/images/honeywell/hero--medium.jpg");
-    }
+    background: url("/assets/images/honeywell/bg--medium.jpg");
   }
 }
 @media @laptop {
 }
 @media @desktop {
   .honeywell {
-    .box-2 {
-      //background-image: url("/assets/images/honeywell/hero--large.jpg");
-    }
+    background: url("/assets/images/honeywell/bg--large.jpg");
   }
 }
 @media @desktop-lg {
 }
-/*
-        figure {
-            &.honeywell {
-                background: #fff url("/assets/images/honeywell/tile--large.jpg") center top no-repeat;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-                overflow: hidden;
-                img {
-                    transition: all 3s ease;
-                    -moz-transition: all 3s ease;
-                    -ms-transition: all 3s ease;
-                    -webkit-transition: all 3s ease;
-                    -o-transition: all 3s ease;
-                    &:hover {
-                        transform: scale(1.2);
-                        -moz-transform: scale(1.2);
-                        -webkit-transform: scale(1.2);
-                        -o-transform: scale(1.2);
-                        -ms-transform: scale(1.2);
-                    }
-                }
-            }
-        }
-
-  {
-  background: #000 url("/assets/images/honeywell/bg--small.jpg") center bottom no-repeat;
-  }
-  @mixin atMedium {
-  background: #000 url("/assets/images/honeywell/bg--medium.jpg") center bottom no-repeat;
-  }
-  @mixin atLarge {
-  background: #000 url("/assets/images/honeywell/bg--large.jpg") center bottom no-repeat;
-  }
-
-<picture>
-            <source sizes="540px" srcSet="../assets/images/honeywell/hero--large.png 540w" media="(min-width: 1200px)" />
-            <source sizes="470px" srcSet="../assets/images/honeywell/hero--medium.png 470w" media="(min-width: 1024px)" />
-            <source sizes="360px" srcSet="../assets/images/honeywell/hero--small.png 360w" media="(min-width: 800px)" />
-            <img srcSet="../assets/images/honeywell/hero--default.png 320w" alt="Honeywell" />
-          </picture>
-  */

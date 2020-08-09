@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from "react"
-const molsonCoorsLogoLarge = "../assets/images/molsoncoors/logo--large.png 250w"
-const molsonCoorsLogoSmall = "../assets/images/molsoncoors/logo--small.png 200w"
-const molsonCoorsLogoDefault = "../assets/images/molsoncoors/logo--default.png 150w"
-const molsonCoorsHeroLarge = "../assets/images/molsoncoors/hero--large.jpg 540w"
-const molsonCoorsHeroMedium = "../assets/images/molsoncoors/hero--medium.jpg 470w"
-const molsonCoorsHeroSmall = "../assets/images/molsoncoors/hero--small.jpg 360w"
-const molsonCoorsHeroDefault = "../assets/images/molsoncoors/hero--default.jpg 320w"
-function MolsonCoors() {
+import Modal from "./Modal"
+import useViewport from "./useViewport"
+import MolsonCoorsContent from "./MolsonCoorsContent"
+const molsonCoorsLogoLarge = "../assets/images/molson-coors/logo--large.png 250w"
+const molsonCoorsLogoSmall = "../assets/images/molson-coors/logo--small.png 200w"
+const molsonCoorsLogoDefault = "../assets/images/molson-coors/logo--default.png 150w"
+const molsonCoorsHeroLarge = "../assets/images/molson-coors/hero--large.jpg 540w"
+const molsonCoorsHeroMedium = "../assets/images/molson-coors/hero--medium.jpg 470w"
+const molsonCoorsHeroSmall = "../assets/images/molson-coors/hero--small.jpg 360w"
+const molsonCoorsHeroDefault = "../assets/images/molson-coors/hero--default.jpg 320w"
+function MolsonCoors(props) {
   let alt = "Molson | Coors Intranet Merge"
+  const { width } = useViewport()
+  const breakpoint = 400
   return (
     <div className="wrapper">
       <div className="box-1">
@@ -42,17 +47,13 @@ function MolsonCoors() {
         </div>
       </div>
       <div className="box-2">
-        {" "}
-        <div className="wrapper">
-          <div className="content">
-            <picture>
-              <source sizes="540px" srcSet={molsonCoorsHeroLarge} media="(min-width: 1200px)" />
-              <source sizes="470px" srcSet={molsonCoorsHeroMedium} media="(min-width: 1024px)" />
-              <source sizes="360px" srcSet={molsonCoorsHeroSmall} media="(min-width: 800px)" />
-              <img srcSet={molsonCoorsHeroDefault} alt={alt} />
-            </picture>
-          </div>
-        </div>
+        {width < breakpoint ? (
+          <Modal>
+            <MolsonCoorsContent />
+          </Modal>
+        ) : (
+          <MolsonCoorsContent />
+        )}
       </div>
     </div>
   )

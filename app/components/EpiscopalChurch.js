@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react"
+import Modal from "./Modal"
+import useViewport from "./useViewport"
+import EpiscopalChurchContent from "./EpiscopalChurchContent"
 const episcopalChurchLogoLarge = "../assets/images/episcopal-church/logo--large.png 250w"
 const episcopalChurchLogoSmall = "../assets/images/episcopal-church/logo--small.png 200w"
 const episcopalChurchLogoDefault = "../assets/images/episcopal-church/logo--default.png 150w"
@@ -6,8 +9,10 @@ const episcopalChurchHeroLarge = "../assets/images/episcopal-church/hero--large.
 const episcopalChurchHeroMedium = "../assets/images/episcopal-church/hero--medium.jpg 470w"
 const episcopalChurchHeroSmall = "../assets/images/episcopal-church/hero--small.jpg 360w"
 const episcopalChurchHeroDefault = "../assets/images/episcopal-church/hero--default.jpg 320w"
-function EpiscopalChurch() {
+function EpiscopalChurch(props) {
   let alt = "Episcopal Church"
+  const { width } = useViewport()
+  const breakpoint = 400
   return (
     <div className="wrapper">
       <div className="box-1">
@@ -37,16 +42,13 @@ function EpiscopalChurch() {
         </div>
       </div>
       <div className="box-2">
-        <div className="wrapper">
-          <div className="content">
-            <picture>
-              <source sizes="540px" srcSet={episcopalChurchHeroLarge} media="(min-width: 1200px)" />
-              <source sizes="470px" srcSet={episcopalChurchHeroMedium} media="(min-width: 1024px)" />
-              <source sizes="360px" srcSet={episcopalChurchHeroSmall} media="(min-width: 800px)" />
-              <img srcSet={episcopalChurchHeroDefault} alt={alt} />
-            </picture>
-          </div>
-        </div>
+        {width < breakpoint ? (
+          <Modal>
+            <EpiscopalChurchContent />
+          </Modal>
+        ) : (
+          <EpiscopalChurchContent />
+        )}
       </div>
     </div>
   )

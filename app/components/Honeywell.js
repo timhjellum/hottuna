@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react"
+import Modal from "./Modal"
+import useViewport from "./useViewport"
+import HoneywellContent from "./HoneywellContent"
 const honeywellLogoLarge = "../assets/images/honeywell/logo--large.png 250w"
 const honeywellLogoSmall = "../assets/images/honeywell/logo--small.png 200w"
 const honeywellLogoDefault = "../assets/images/honeywell/logo--default.png 150w"
@@ -6,8 +9,10 @@ const honeywellHeroLarge = "../assets/images/honeywell/hero--large.jpg 540w"
 const honeywellHeroMedium = "../assets/images/honeywell/hero--medium.jpg 470w"
 const honeywellHeroSmall = "../assets/images/honeywell/hero--small.jpg 360w"
 const honeywellHeroDefault = "../assets/images/honeywell/hero--default.jpg 320w"
-function Honeywell() {
+function Honeywell(props) {
   let alt = "Honeywell"
+  const { width } = useViewport()
+  const breakpoint = 400
   return (
     <div className="wrapper">
       <div className="box-1">
@@ -33,17 +38,13 @@ function Honeywell() {
         </div>
       </div>
       <div className="box-2">
-        {" "}
-        <div className="wrapper">
-          <div className="content">
-            <picture>
-              <source sizes="540px" srcSet={honeywellHeroLarge} media="(min-width: 1200px)" />
-              <source sizes="470px" srcSet={honeywellHeroMedium} media="(min-width: 1024px)" />
-              <source sizes="360px" srcSet={honeywellHeroSmall} media="(min-width: 800px)" />
-              <img srcSet={honeywellHeroDefault} alt={alt} />
-            </picture>
-          </div>
-        </div>
+        {width < breakpoint ? (
+          <Modal>
+            <HoneywellContent />
+          </Modal>
+        ) : (
+          <HoneywellContent />
+        )}
       </div>
     </div>
   )

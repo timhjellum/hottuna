@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from "react"
+import Modal from "./Modal"
+import useViewport from "./useViewport"
+import DisneyNav from "./DisneyNav"
+import DisneyHoneymoonsContent from "./DisneyHoneymoonsContent"
 const disneyHoneymoonsLogoLarge = "../assets/images/disney-honeymoons/logo--large.png 250w"
 const disneyHoneymoonsLogoSmall = "../assets/images/disney-honeymoons/logo--small.png 200w"
 const disneyHoneymoonsLogoDefault = "../assets/images/disney-honeymoons/logo--default.png 150w"
@@ -6,10 +10,12 @@ const disneyHoneymoonsHeroLarge = "../assets/images/disney-honeymoons/hero--larg
 const disneyHoneymoonsHeroMedium = "../assets/images/disney-honeymoons/hero--medium.jpg 470w"
 const disneyHoneymoonsHeroSmall = "../assets/images/disney-honeymoons/hero--small.jpg 360w"
 const disneyHoneymoonsHeroDefault = "../assets/images/disney-honeymoons/hero--default.jpg 320w"
-function DisneyHoneymoons() {
-  let alt = "Walt Disney Honeymoons"
+function DisneyHoneymoons(props) {
+  let alt = "Disney Honeymoons"
+  const { width } = useViewport()
+  const breakpoint = 400
   return (
-    <div className="wrapper">
+    <div className="wrapper" id="DisneyHoneymoons">
       <div className="box-1">
         <div className="logo">
           <picture>
@@ -44,17 +50,15 @@ function DisneyHoneymoons() {
         </div>
       </div>
       <div className="box-2">
-        <div className="wrapper">
-          <div className="content">
-            <picture>
-              <source sizes="540px" srcSet={disneyHoneymoonsHeroLarge} media="(min-width: 1200px)" />
-              <source sizes="470px" srcSet={disneyHoneymoonsHeroMedium} media="(min-width: 1024px)" />
-              <source sizes="360px" srcSet={disneyHoneymoonsHeroSmall} media="(min-width: 800px)" />
-              <img srcSet={disneyHoneymoonsHeroDefault} alt={alt} />
-            </picture>
-          </div>
-        </div>
+        {width < breakpoint ? (
+          <Modal>
+            <DisneyHoneymoonsContent />
+          </Modal>
+        ) : (
+          <DisneyHoneymoonsContent />
+        )}
       </div>
+      <DisneyNav />
     </div>
   )
 }

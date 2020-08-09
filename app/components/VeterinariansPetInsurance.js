@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react"
+import Modal from "./Modal"
+import useViewport from "./useViewport"
+import VeterinariansPetInsuranceContent from "./VeterinariansPetInsuranceContent"
 const veterinariansPetInsuranceLogoLarge = "../assets/images/veterinarians-pet-insurance/logo--large.png 250w"
 const veterinariansPetInsuranceLogoSmall = "../assets/images/veterinarians-pet-insurance/logo--small.png 200w"
 const veterinariansPetInsuranceLogoDefault = "../assets/images/veterinarians-pet-insurance/logo--default.png 150w"
@@ -6,8 +9,10 @@ const veterinariansPetInsuranceHeroLarge = "../assets/images/veterinarians-pet-i
 const veterinariansPetInsuranceHeroMedium = "../assets/images/veterinarians-pet-insurance/hero--medium.jpg 470w"
 const veterinariansPetInsuranceHeroSmall = "../assets/images/veterinarians-pet-insurance/hero--small.jpg 360w"
 const veterinariansPetInsuranceHeroDefault = "../assets/images/veterinarians-pet-insurance/hero--default.jpg 320w"
-function VeterinariansPetInsurance() {
+function VeterinariansPetInsurance(props) {
   let alt = "Veterinary Pet Insurance (VPI)"
+  const { width } = useViewport()
+  const breakpoint = 400
   return (
     <div className="wrapper">
       <div className="box-1">
@@ -35,17 +40,13 @@ function VeterinariansPetInsurance() {
         </div>
       </div>
       <div className="box-2">
-        {" "}
-        <div className="wrapper">
-          <div className="content">
-            <picture>
-              <source sizes="540px" srcSet={veterinariansPetInsuranceHeroLarge} media="(min-width: 1200px)" />
-              <source sizes="470px" srcSet={veterinariansPetInsuranceHeroMedium} media="(min-width: 1024px)" />
-              <source sizes="360px" srcSet={veterinariansPetInsuranceHeroSmall} media="(min-width: 800px)" />
-              <img srcSet={veterinariansPetInsuranceHeroDefault} alt={alt} />
-            </picture>
-          </div>
-        </div>
+        {width < breakpoint ? (
+          <Modal>
+            <VeterinariansPetInsuranceContent />
+          </Modal>
+        ) : (
+          <VeterinariansPetInsuranceContent />
+        )}
       </div>
     </div>
   )

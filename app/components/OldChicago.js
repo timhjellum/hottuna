@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react"
+import Modal from "./Modal"
+import useViewport from "./useViewport"
+import OldChicagoContent from "./OldChicagoContent"
 const oldChicagoLogoLarge = "../assets/images/old-chicago/logo--large.png 250w"
 const oldChicagoLogoSmall = "../assets/images/old-chicago/logo--small.png 200w"
 const oldChicagoLogoDefault = "../assets/images/old-chicago/logo--default.png 150w"
-const oldChicagoHeroLarge = "../assets/images/old-chicago/hero--large.jpg 540w"
-const oldChicagoHeroMedium = "../assets/images/old-chicago/hero--medium.jpg 470w"
-const oldChicagoHeroSmall = "../assets/images/old-chicago/hero--small.jpg 360w"
-const oldChicagoHeroDefault = "../assets/images/old-chicago/hero--default.jpg 320w"
-function OldChicago() {
+
+function OldChicago(props) {
   let alt = "Old Chicago"
+  const { width } = useViewport()
+  const breakpoint = 400
   return (
     <div className="wrapper">
       <div className="box-1">
@@ -34,25 +36,6 @@ function OldChicago() {
               <li>Sitemaps</li>
               <li>Wireframes</li>
             </ul>
-            <div className="graph">
-              <ul>
-                <li className="bar nr_1 blue" style={{ height: "25px" }}>
-                  <div className="top"></div>
-                  <div className="bottom"></div>
-                  <span>20%</span>
-                </li>
-                <li className="bar nr_2 green" style={{ height: "75px" }}>
-                  <div className="top"></div>
-                  <div className="bottom"></div>
-                  <span>40%</span>
-                </li>
-                <li className="bar nr_3 orange" style={{ height: "75px" }}>
-                  <div className="top"></div>
-                  <div className="bottom"></div>
-                  <span>40%</span>
-                </li>
-              </ul>
-            </div>
             <div className="label">How I was utilized</div>
           </div>
           <p className="technologies"></p>
@@ -60,17 +43,13 @@ function OldChicago() {
         </div>
       </div>
       <div className="box-2">
-        {" "}
-        <div className="wrapper">
-          <div className="content">
-            <picture>
-              <source sizes="540px" srcSet={oldChicagoHeroLarge} media="(min-width: 1200px)" />
-              <source sizes="470px" srcSet={oldChicagoHeroMedium} media="(min-width: 1024px)" />
-              <source sizes="360px" srcSet={oldChicagoHeroSmall} media="(min-width: 800px)" />
-              <img srcSet={oldChicagoHeroDefault} alt={alt} />
-            </picture>
-          </div>
-        </div>
+        {width < breakpoint ? (
+          <Modal>
+            <OldChicagoContent />
+          </Modal>
+        ) : (
+          <OldChicagoContent />
+        )}
       </div>
     </div>
   )

@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from "react"
+import Modal from "./Modal"
+import useViewport from "./useViewport"
+import DisneyNav from "./DisneyNav"
+import DisneyMapsContent from "./DisneyMapsContent"
 const disneyMapssLogoLarge = "../assets/images/disney-maps/logo--large.png 250w"
 const disneyMapssLogoSmall = "../assets/images/disney-maps/logo--small.png 200w"
 const disneyMapssLogoDefault = "../assets/images/disney-maps/logo--default.png 150w"
@@ -6,10 +10,12 @@ const disneyMapsHeroLarge = "../assets/images/disney-maps/hero--large.jpg 540w"
 const disneyMapsHeroMedium = "../assets/images/disney-maps/hero--medium.jpg 470w"
 const disneyMapsHeroSmall = "../assets/images/disney-maps/hero--small.jpg 360w"
 const disneyMapsHeroDefault = "../assets/images/disney-maps/hero--default.jpg 320w"
-function DisneyMaps() {
-  let alt = "Walt Disney Maps"
+function DisneyMaps(props) {
+  let alt = "Disney Maps"
+  const { width } = useViewport()
+  const breakpoint = 400
   return (
-    <div className="wrapper">
+    <div className="wrapper" id="DisneyMaps">
       <div className="box-1">
         <div className="logo">
           <picture>
@@ -38,17 +44,15 @@ function DisneyMaps() {
         </div>
       </div>
       <div className="box-2">
-        <div className="wrapper">
-          <div className="content">
-            <picture>
-              <source sizes="540px" srcSet={disneyMapsHeroLarge} media="(min-width: 1200px)" />
-              <source sizes="470px" srcSet={disneyMapsHeroMedium} media="(min-width: 1024px)" />
-              <source sizes="360px" srcSet={disneyMapsHeroSmall} media="(min-width: 800px)" />
-              <img srcSet={disneyMapsHeroDefault} alt={alt} />
-            </picture>
-          </div>
-        </div>
+        {width < breakpoint ? (
+          <Modal>
+            <DisneyMapsContent />
+          </Modal>
+        ) : (
+          <DisneyMapsContent />
+        )}
       </div>
+      <DisneyNav />
     </div>
   )
 }

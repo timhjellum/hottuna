@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react"
+import Modal from "./Modal"
+import useViewport from "./useViewport"
+import OrlandoMagicContent from "./OrlandoMagicContent"
 const orlandoMagicLogoLarge = "../assets/images/orlando-magic/logo--large.png 250w"
 const orlandoMagicLogoSmall = "../assets/images/orlando-magic/logo--small.png 200w"
 const orlandoMagicLogoDefault = "../assets/images/orlando-magic/logo--default.png 150w"
@@ -6,8 +9,10 @@ const orlandoMagicHeroLarge = "../assets/images/orlando-magic/hero--large.jpg 54
 const orlandoMagicHeroMedium = "../assets/images/orlando-magic/hero--medium.jpg 470w"
 const orlandoMagicHeroSmall = "../assets/images/orlando-magic/hero--small.jpg 360w"
 const orlandoMagicHeroDefault = "../assets/images/orlando-magic/hero--default.jpg 320w"
-function OrlandoMagic() {
+function OrlandoMagic(props) {
   let alt = "Orlando Magic"
+  const { width } = useViewport()
+  const breakpoint = 400
   return (
     <div className="wrapper">
       <div className="box-1">
@@ -34,20 +39,15 @@ function OrlandoMagic() {
         </div>
       </div>
       <div className="box-2">
-        {" "}
-        <div className="wrapper">
-          <div className="content">
-            <picture>
-              <source sizes="540px" srcSet={orlandoMagicHeroLarge} media="(min-width: 1200px)" />
-              <source sizes="470px" srcSet={orlandoMagicHeroMedium} media="(min-width: 1024px)" />
-              <source sizes="360px" srcSet={orlandoMagicHeroSmall} media="(min-width: 800px)" />
-              <img srcSet={orlandoMagicHeroDefault} alt={alt} />
-            </picture>
-          </div>
-        </div>
+        {width < breakpoint ? (
+          <Modal>
+            <OrlandoMagicContent />
+          </Modal>
+        ) : (
+          <OrlandoMagicContent />
+        )}
       </div>
     </div>
   )
 }
-
 export default OrlandoMagic

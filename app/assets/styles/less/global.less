@@ -1,26 +1,32 @@
-.wrap {
+html {
+  scroll-behavior: smooth;
+}
+
+/*
+  .wrap {
   position: relative;
 }
 .css_bar_graph {
   display: none;
 }
+*/
 body {
   font-family: "Roboto", sans-serif;
   color: #333;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
+//img {
+//max-width: 100%;
+//height: auto;
+//}
 
 * {
   box-sizing: border-box;
 }
 @media @mobile {
   .wrapper {
-    width: 100%;
-    margin: 0 auto;
+    width: 96%;
+    margin: 0 2%;
     text-align: left;
     overflow-y: auto;
     overflow-x: hidden;
@@ -29,25 +35,42 @@ img {
     width: 100%;
     float: left;
     padding: 1em 0;
+    clear: both;
+    .logo {
+      margin: 0 auto;
+      text-align: center;
+      /*
+	  picture {
+        display: inline-block;
+        margin: 0 auto;
+	  }
+	  */
+    }
   }
   .box-2 {
-    //display: none;
+    width: 100%;
+    float: left;
+    padding: 1em 0;
+    text-align: center;
+    button {
+      margin: 0 auto;
+    }
   }
 }
 @media @mobile-landscape {
 }
 @media @tablet {
+  // 600px
   .box-1 {
     width: 45%;
+    clear: none;
   }
   .box-2 {
     width: 45%;
     float: right;
-    width: 100%;
     height: 100vh;
-    float: left;
+    float: right;
     padding: 0;
-    display: block;
     .wrapper {
       overflow: auto;
       height: 90vh;
@@ -58,9 +81,6 @@ img {
       overflow-y: auto;
     }
   }
-  .modal-button {
-    display: block;
-  }
 }
 @media @tablet-landscape {
 }
@@ -68,9 +88,6 @@ img {
   .wrapper {
     width: 90%;
     margin: 0 5%;
-  }
-  .modal-button {
-    display: none;
   }
 }
 @media @desktop {

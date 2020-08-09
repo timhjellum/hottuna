@@ -1,42 +1,13 @@
 import React, { useEffect, useState } from "react"
-//import { render } from "react-dom"
-import Modal from "react-modal"
-
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)"
-  }
-}
-
-var subtitle
+import Modal from "./Modal"
+import useViewport from "./useViewport"
+import BlackAndVeatchContent from "./BlackAndVeatchContent"
 
 function BlackAndVeatch(props) {
   let alt = "Black and Veatch"
-  const blackAndVeatchHeroLarge = "../assets/images/black-and-veatch/hero--large.jpg 540w"
-  const blackAndVeatchHeroMedium = "../assets/images/black-and-veatch/hero--medium.jpg 470w"
-  const blackAndVeatchHeroSmall = "../assets/images/black-and-veatch/hero--small.jpg 360w"
-  const blackAndVeatchHeroDefault = "../assets/images/black-and-veatch/hero--default.jpg 320w"
   require("svg-url-loader!../assets/images/black-and-veatch/logo--default.svg")
-
-  const [modalIsOpen, setIsOpen] = React.useState(true)
-  function openModal() {
-    setIsOpen(true)
-  }
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = "#f00"
-  }
-  function closeModal() {
-    setIsOpen(false)
-  }
-
-  //const isDesktop = this.state.isDesktop
-
+  const { width } = useViewport()
+  const breakpoint = 400
   return (
     <div className="wrapper">
       <div className="box-1">
@@ -55,27 +26,14 @@ function BlackAndVeatch(props) {
           <p className="tools"></p>
         </div>
       </div>
-      {/* <div>{isDesktop ? <div>I show on 1451px or higher</div> : <div>I show on 1450px or lower</div>}</div> */}
       <div className="box-2">
-        <div>
-          <button onClick={openModal} className="modal-button">
-            Open Modal
-          </button>
-          <Modal isOpen={modalIsOpen} onAfterOpen={afterOpenModal} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-            <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2>
-            <button onClick={closeModal}>close</button>
-            <div className="wrapper">
-              <div className="content">
-                <picture>
-                  <source sizes="540px" srcSet={blackAndVeatchHeroLarge} media="(min-width: 1200px)" />
-                  <source sizes="470px" srcSet={blackAndVeatchHeroMedium} media="(min-width: 1024px)" />
-                  <source sizes="360px" srcSet={blackAndVeatchHeroSmall} media="(min-width: 800px)" />
-                  <img srcSet={blackAndVeatchHeroDefault} alt={alt} />
-                </picture>
-              </div>
-            </div>
+        {width < breakpoint ? (
+          <Modal>
+            <BlackAndVeatchContent />
           </Modal>
-        </div>
+        ) : (
+          <BlackAndVeatchContent />
+        )}
       </div>
     </div>
   )

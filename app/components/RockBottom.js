@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react"
+import Modal from "./Modal"
+import useViewport from "./useViewport"
+import RockBottomContent from "./RockBottomContent"
 const rockBottomLogoLarge = "../assets/images/rock-bottom/logo--large.png 250w"
 const rockBottomLogoSmall = "../assets/images/rock-bottom/logo--small.png 200w"
 const rockBottomLogoDefault = "../assets/images/rock-bottom/logo--default.png 150w"
@@ -6,8 +9,10 @@ const rockBottomHeroLarge = "../assets/images/rock-bottom/hero--large.jpg 540w"
 const rockBottomHeroMedium = "../assets/images/rock-bottom/hero--medium.jpg 470w"
 const rockBottomHeroSmall = "../assets/images/rock-bottom/hero--small.jpg 360w"
 const rockBottomHeroDefault = "../assets/images/rock-bottom/hero--default.jpg 320w"
-function RockBottom() {
+function RockBottom(props) {
   let alt = "Rock Bottom"
+  const { width } = useViewport()
+  const breakpoint = 400
   return (
     <div className="wrapper">
       <div className="box-1">
@@ -30,41 +35,18 @@ function RockBottom() {
               <li>Sitemaps</li>
               <li>Wireframes</li>
             </ul>
-            <div className="graph">
-              <ul>
-                <li className="bar nr_1 blue" style={{ height: "25px" }}>
-                  <div className="top"></div>
-                  <div className="bottom"></div>
-                  <span>20%</span>
-                </li>
-                <li className="bar nr_2 green" style={{ height: "75px" }}>
-                  <div className="top"></div>
-                  <div className="bottom"></div>
-                  <span>40%</span>
-                </li>
-                <li className="bar nr_3 orange" style={{ height: "75px" }}>
-                  <div className="top"></div>
-                  <div className="bottom"></div>
-                  <span>40%</span>
-                </li>
-              </ul>
-            </div>
             <div className="label">How I was utilized</div>
           </div>
         </div>
       </div>
       <div className="box-2">
-        {" "}
-        <div className="wrapper">
-          <div className="content">
-            <picture>
-              <source sizes="540px" srcSet={rockBottomHeroLarge} media="(min-width: 1200px)" />
-              <source sizes="470px" srcSet={rockBottomHeroMedium} media="(min-width: 1024px)" />
-              <source sizes="360px" srcSet={rockBottomHeroSmall} media="(min-width: 800px)" />
-              <img srcSet={rockBottomHeroDefault} alt={alt} />
-            </picture>
-          </div>
-        </div>
+        {width < breakpoint ? (
+          <Modal>
+            <RockBottomContent />
+          </Modal>
+        ) : (
+          <RockBottomContent />
+        )}
       </div>
     </div>
   )

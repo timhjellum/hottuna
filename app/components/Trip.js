@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react"
+import Modal from "./Modal"
+import useViewport from "./useViewport"
+import TripContent from "./TripContent"
 const tripLogoLarge = "../assets/images/trip/logo--large.png 250w"
 const tripLogoSmall = "../assets/images/trip/logo--small.png 200w"
 const tripLogoDefault = "../assets/images/trip/logo--default.png 150w"
@@ -6,13 +9,14 @@ const tripHeroLarge = "../assets/images/trip/hero--large.jpg 540w"
 const tripHeroMedium = "../assets/images/trip/hero--medium.jpg 470w"
 const tripHeroSmall = "../assets/images/trip/hero--small.jpg 360w"
 const tripHeroDefault = "../assets/images/trip/hero--default.jpg 320w"
-function Trip() {
+function Trip(props) {
   let alt = "Trip.com / CheapTickets.com / all Cendent Cobrands"
+  const { width } = useViewport()
+  const breakpoint = 400
   return (
     <div className="wrapper">
       <div className="box-1">
         <div className="logo">
-          {" "}
           <picture>
             <source sizes="540px" srcSet={tripLogoLarge} media="(min-width: 1024px)" />
             <source sizes="360px" srcSet={tripLogoSmall} media="(min-width: 800px)" />
@@ -30,17 +34,13 @@ function Trip() {
         </div>
       </div>
       <div className="box-2">
-        {" "}
-        <div className="wrapper">
-          <div className="content">
-            <picture>
-              <source sizes="540px" srcSet={tripHeroLarge} media="(min-width: 1200px)" />
-              <source sizes="470px" srcSet={tripHeroMedium} media="(min-width: 1024px)" />
-              <source sizes="360px" srcSet={tripHeroSmall} media="(min-width: 800px)" />
-              <img srcSet={tripHeroDefault} alt={alt} />
-            </picture>
-          </div>
-        </div>
+        {width < breakpoint ? (
+          <Modal>
+            <TripContent />
+          </Modal>
+        ) : (
+          <TripContent />
+        )}
       </div>
     </div>
   )

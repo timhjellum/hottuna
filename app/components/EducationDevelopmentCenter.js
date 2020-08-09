@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react"
+import Modal from "./Modal"
+import useViewport from "./useViewport"
+import EducationDevelopmentCenterContent from "./EducationDevelopmentCenterContent"
 const educationDevelopmentCenterLogoLarge = "../assets/images/education-development-center/logo--large.png 250w"
 const educationDevelopmentCenterLogoSmall = "../assets/images/education-development-center/logo--small.png 200w"
 const educationDevelopmentCenterLogoDefault = "../assets/images/education-development-center/logo--default.png 150w"
@@ -6,8 +9,10 @@ const educationDevelopmentCenterHeroLarge = "../assets/images/education-developm
 const educationDevelopmentCenterHeroMedium = "../assets/images/education-development-center/hero--medium.jpg 470w"
 const educationDevelopmentCenterHeroSmall = "../assets/images/education-development-center/hero--small.jpg 360w"
 const educationDevelopmentCenterHeroDefault = "../assets/images/education-development-center/hero--default.jpg 320w"
-function EducationDevelopmentCenter() {
+function EducationDevelopmentCenter(props) {
   let alt = "Education Development Center (EDC)"
+  const { width } = useViewport()
+  const breakpoint = 400
   return (
     <div className="wrapper">
       <div className="box-1">
@@ -35,16 +40,13 @@ function EducationDevelopmentCenter() {
         </div>
       </div>
       <div className="box-2">
-        <div className="wrapper">
-          <div className="content">
-            <picture>
-              <source sizes="540px" srcSet={educationDevelopmentCenterHeroLarge} media="(min-width: 1200px)" />
-              <source sizes="470px" srcSet={educationDevelopmentCenterHeroMedium} media="(min-width: 1024px)" />
-              <source sizes="360px" srcSet={educationDevelopmentCenterHeroSmall} media="(min-width: 800px)" />
-              <img srcSet={educationDevelopmentCenterHeroDefault} alt={alt} />
-            </picture>
-          </div>
-        </div>
+        {width < breakpoint ? (
+          <Modal>
+            <EducationDevelopmentCenterContent />
+          </Modal>
+        ) : (
+          <EducationDevelopmentCenterContent />
+        )}
       </div>
     </div>
   )
