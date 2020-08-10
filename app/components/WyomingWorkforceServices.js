@@ -5,11 +5,6 @@ import WyomingWorkforceServicesContent from "./WyomingWorkforceServicesContent"
 const wyomingWorkforceServicesLogoLarge = "../assets/images/wyoming-workforce-services/logo--large.png 250w"
 const wyomingWorkforceServicesLogoSmall = "../assets/images/wyoming-workforce-services/logo--small.png 200w"
 const wyomingWorkforceServicesLogoDefault = "../assets/images/wyoming-workforce-services/logo--default.png 150w"
-const wyomingWorkforceServicesHeroLarge = "../assets/images/wyoming-workforce-services/hero--large.jpg 540w"
-const wyomingWorkforceServicesHeroMedium = "../assets/images/wyoming-workforce-services/hero--medium.jpg 470w"
-const wyomingWorkforceServicesHeroSmall = "../assets/images/wyoming-workforce-services/hero--small.jpg 360w"
-const wyomingWorkforceServicesHeroDefault = "../assets/images/wyoming-workforce-services/hero--default.jpg 320w"
-
 function WyomingWorkforceServices(props) {
   let alt = "Wyoming Workforce Services"
   const { width } = useViewport()

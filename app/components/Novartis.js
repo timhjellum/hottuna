@@ -2,10 +2,7 @@ import React, { useEffect, useState } from "react"
 import Modal from "./Modal"
 import useViewport from "./useViewport"
 import NovartisContent from "./NovartisContent"
-const novartisLogoLarge = "../assets/images/novartis/logo--large.png 250w"
-const novartisLogoSmall = "../assets/images/novartis/logo--small.png 200w"
-const novartisLogoDefault = "../assets/images/novartis/logo--default.png 150w"
-
+require("svg-url-loader!../assets/images/novartis/logo.svg")
 function Novartis(props) {
   let alt = "Novartis Pharmaceuticals"
   const { width } = useViewport()
@@ -13,13 +10,7 @@ function Novartis(props) {
   return (
     <div className="wrapper">
       <div className="box-1">
-        <div className="logo">
-          <picture>
-            <source sizes="540px" srcSet={novartisLogoLarge} media="(min-width: 1024px)" />
-            <source sizes="360px" srcSet={novartisLogoSmall} media="(min-width: 800px)" />
-            <img srcSet={novartisLogoDefault} alt={alt} />
-          </picture>
-        </div>
+        <div className="logo"></div>
         <div className="content">
           <h1>{alt}</h1>
           <h2 className="subtitle">

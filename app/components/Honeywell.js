@@ -2,13 +2,7 @@ import React, { useEffect, useState } from "react"
 import Modal from "./Modal"
 import useViewport from "./useViewport"
 import HoneywellContent from "./HoneywellContent"
-const honeywellLogoLarge = "../assets/images/honeywell/logo--large.png 250w"
-const honeywellLogoSmall = "../assets/images/honeywell/logo--small.png 200w"
-const honeywellLogoDefault = "../assets/images/honeywell/logo--default.png 150w"
-const honeywellHeroLarge = "../assets/images/honeywell/hero--large.jpg 540w"
-const honeywellHeroMedium = "../assets/images/honeywell/hero--medium.jpg 470w"
-const honeywellHeroSmall = "../assets/images/honeywell/hero--small.jpg 360w"
-const honeywellHeroDefault = "../assets/images/honeywell/hero--default.jpg 320w"
+require("svg-url-loader!../assets/images/honeywell/logo.svg")
 function Honeywell(props) {
   let alt = "Honeywell"
   const { width } = useViewport()
@@ -16,13 +10,7 @@ function Honeywell(props) {
   return (
     <div className="wrapper">
       <div className="box-1">
-        <div className="logo">
-          <picture>
-            <source sizes="540px" srcSet={honeywellLogoLarge} media="(min-width: 1024px)" />
-            <source sizes="360px" srcSet={honeywellLogoSmall} media="(min-width: 800px)" />
-            <img srcSet={honeywellLogoDefault} alt={alt} />
-          </picture>
-        </div>
+        <div className="logo"></div>
         <div className="text-content">
           <h1>{alt}</h1>
           <h2 className="subtitle">Websites, Extranets &#38; Intranets; Desktop to Tablet (Responsive Design) + User Interface Technology Consolidation</h2>

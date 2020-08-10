@@ -5,7 +5,7 @@ function VisaContent(props) {
   const visaHeroMedium = "../assets/images/visa/hero--medium.jpg 470w"
   const visaHeroSmall = "../assets/images/visa/hero--small.jpg 360w"
   const visaHeroDefault = "../assets/images/visa/hero--default.jpg 320w"
-  let alt = "Boston Market Website Redesign"
+  let alt = "visa"
   return (
     <div className="wrapper">
       <div className="content">

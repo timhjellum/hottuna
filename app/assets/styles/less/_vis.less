@@ -1,14 +1,13 @@
+// min-width: 320px) smartphones, portrait iPhone, portrait 480x320 phones (Android)
 @media @mobile {
   .visa {
     h1 {
       display: none;
     }
     .logo {
-      picture {
-        img {
-          width: 50%;
-        }
-      }
+      background-image: url("/assets/images/visa/logo.svg");
+      background-size: cover;
+      width: 140px;
     }
     .box-2 {
       //background-image: url("/assets/images/visa/hero--default.jpg");
@@ -16,6 +15,7 @@
     }
   }
 }
+// min-width:480px) smartphones, Android phones, landscape iPhone
 @media @mobile-landscape {
   .visa {
     .box-1 {
@@ -28,8 +28,10 @@
     }
   }
 }
+// min-width: 600px tablet portrait
 @media @tablet {
 }
+// min-width: 801px) tablet, landscape iPad, lo-res laptops ands desktops
 @media @tablet-landscape {
   .visa {
     .box-2 {
@@ -37,8 +39,10 @@
     }
   }
 }
+// min-width: 1025px) big landscape tablets, laptops, and desktops
 @media @laptop {
 }
+// min-width: 1200px) big landscape tablets, laptops, and desktops
 @media @desktop {
   .visa {
     .box-2 {
@@ -46,6 +50,7 @@
     }
   }
 }
+// min-width: 2300px) TV
 @media @desktop-lg {
 }
 

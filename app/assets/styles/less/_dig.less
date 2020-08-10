@@ -1,57 +1,70 @@
+// min-width: 320px) smartphones, portrait iPhone, portrait 480x320 phones (Android)
 @media @mobile {
   .diginext {
     background: #454545 url("/assets/images/diginext/bg--default.jpg") center top no-repeat;
     background-size: cover;
     height: 100vh;
-    color: #fff;
     h1 {
       display: none;
     }
-    .logo {
-      picture {
-        img {
-          width: 50%;
-        }
+    .my-title {
+      color: #ccc;
+    }
+    a {
+      color: #ccc;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
       }
     }
-    .box-2 {
-      //background-image: url("/assets/images/diginext/hero--default.jpg");
+    color: #ccc;
+    .logo {
+      background-image: url("/assets/images/diginext/logo.svg");
       background-size: cover;
+      width: 140px;
+      height: 50px;
     }
   }
 }
+// min-width:480px) smartphones, Android phones, landscape iPhone
 @media @mobile-landscape {
   .diginext {
-    background: #454545 url("/assets/images/diginext/bg--small.jpg") center top no-repeat;
-    .box-1 {
-      width: 45%;
-    }
     .box-2 {
-      width: 45%;
-      float: right;
-      //background-image: url("/assets/images/diginext/hero--small.jpg");
+      // temporary
+      .wrapper {
+        background: url("/assets/images/diginext/hero--large.jpg");
+        //background-size: cover;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+      }
     }
   }
 }
+// min-width: 600px tablet portrait
 @media @tablet {
 }
+// min-width: 801px) tablet, landscape iPad, lo-res laptops ands desktops
 @media @tablet-landscape {
-  .diginext {
-    background: #454545 url("/assets/images/diginext/bg--medium.jpg") center top no-repeat;
-    .box-2 {
-      //background-image: url("/assets/images/diginext/hero--medium.jpg");
-    }
-  }
 }
+// min-width: 1025px) big landscape tablets, laptops, and desktops
 @media @laptop {
 }
+// min-width: 1200px) big landscape tablets, laptops, and desktops
 @media @desktop {
+}
+// min-width: 2300px) TV
+@media @desktop-lg {
   .diginext {
-    background: #454545 url("/assets/images/diginext/bg--large.jpg") center top no-repeat;
     .box-2 {
-      //background-image: url("/assets/images/diginext/hero--large.jpg");
+      // temporary
+      overflow-y: auto;
+      .wrapper {
+        background: url("/assets/images/diginext/hero--x-large.png");
+        //background-size: cover;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        height: 300%;
+      }
     }
   }
-}
-@media @desktop-lg {
 }

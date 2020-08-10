@@ -2,13 +2,7 @@ import React, { useEffect, useState } from "react"
 import Modal from "./Modal"
 import useViewport from "./useViewport"
 import RedRobinContent from "./RedRobinContent"
-const redRobinLogoLarge = "../assets/images/red-robin/logo--large.png 250w"
-const redRobinLogoSmall = "../assets/images/red-robin/logo--small.png 200w"
-const redRobinLogoDefault = "../assets/images/red-robin/logo--default.png 150w"
-const redRobinHeroLarge = "../assets/images/red-robin/hero--large.jpg 540w"
-const redRobinHeroMedium = "../assets/images/red-robin/hero--medium.jpg 470w"
-const redRobinHeroSmall = "../assets/images/red-robin/hero--small.jpg 360w"
-const redRobinHeroDefault = "../assets/images/red-robin/hero--default.jpg 320w"
+require("svg-url-loader!../assets/images/red-robin/logo.svg")
 function RedRobin(props) {
   let alt = "Red Robin Gourmet Hamburgers"
   const { width } = useViewport()
@@ -16,14 +10,7 @@ function RedRobin(props) {
   return (
     <div className="wrapper">
       <div className="box-1">
-        <div className="logo">
-          {" "}
-          <picture>
-            <source sizes="540px" srcSet={redRobinLogoLarge} media="(min-width: 1024px)" />
-            <source sizes="360px" srcSet={redRobinLogoSmall} media="(min-width: 800px)" />
-            <img srcSet={redRobinLogoDefault} alt={alt} />
-          </picture>
-        </div>
+        <div className="logo"></div>
         <div className="text-content">
           <h1>{alt}</h1>
           <h2 className="subtitle">Websites, extranets &#38; Intranets</h2>

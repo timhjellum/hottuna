@@ -1,33 +1,57 @@
+// min-width: 320px) smartphones, portrait iPhone, portrait 480x320 phones (Android)
 @media @mobile {
   .molson-coors {
+    background-image: url("/assets/images/molson-coors/bg--default.jpg");
+    background-repeat: no-repeat;
+    background-color: #000;
+    background-size: contain;
+    background-position-y: 20px;
     .logo {
-      picture {
-        img {
-          width: 50%;
-        }
-      }
+      background-image: url("/assets/images/molson-coors/logo.svg");
+      background-size: cover;
+      width: 300px;
+      height: 100px; // real height: 200px;
+      background-position-y: -50px;
     }
     .box-2 {
-      //background-image: url("/assets/images/molson-coors/hero--default.jpg");
-      background-size: cover;
+      margin-top: 20px;
+      .wrapper {
+        background-image: url("/assets/images/molson-coors/hero--medium.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+      }
     }
   }
 }
+// min-width:480px) smartphones, Android phones, landscape iPhone
 @media @mobile-landscape {
   .molson-coors {
+    background-image: url("/assets/images/molson-coors/bg--small.jpg");
+    .box-2 {
+      .wrapper {
+        background-image: url("/assets/images/molson-coors/hero--x-large.png");
+      }
+    }
   }
 }
+// min-width: 600px tablet portrait
 @media @tablet {
+  .molson-coors {
+    background-image: url("/assets/images/molson-coors/bg--medium.jpg");
+  }
 }
+// min-width: 801px) tablet, landscape iPad, lo-res laptops ands desktops
 @media @tablet-landscape {
-  .molson-coors {
-  }
 }
+// min-width: 1025px) big landscape tablets, laptops, and desktops
 @media @laptop {
-}
-@media @desktop {
   .molson-coors {
+    background-image: url("/assets/images/molson-coors/bg--large.jpg");
   }
 }
+// min-width: 1200px) big landscape tablets, laptops, and desktops
+@media @desktop {
+}
+// min-width: 2300px) TV
 @media @desktop-lg {
 }

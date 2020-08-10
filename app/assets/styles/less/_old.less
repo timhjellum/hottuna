@@ -1,7 +1,17 @@
+// min-width: 320px) smartphones, portrait iPhone, portrait 480x320 phones (Android)
 @media @mobile {
   .old-chicago {
     background-image: url("/assets/images/old-chicago/bg--tile.png");
-    background-size: 150px 180px;
+    background-repeat: repeat;
+    background-color: #fff;
+    .box-2 {
+      margin-top: 20px;
+      .wrapper {
+        background-image: url("/assets/images/old-chicago/hero--medium.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+      }
+    }
     h1 {
       display: none;
     }
@@ -20,21 +30,31 @@
     }
   }
 }
+// min-width:480px) smartphones, Android phones, landscape iPhone
 @media @mobile-landscape {
-  .boston-market {
+  .old-chicago {
   }
 }
+// min-width: 600px tablet portrait
 @media @tablet {
+  .old-chicago {
+  }
 }
+// min-width: 801px) tablet, landscape iPad, lo-res laptops ands desktops
 @media @tablet-landscape {
-  .boston-market {
+  .old-chicago {
   }
 }
+// min-width: 1025px) big landscape tablets, laptops, and desktops
 @media @laptop {
-}
-@media @desktop {
-  .boston-market {
+  .old-chicago {
   }
 }
+// min-width: 1200px) big landscape tablets, laptops, and desktops
+@media @desktop {
+  .old-chicago {
+  }
+}
+// min-width: 2300px) TV
 @media @desktop-lg {
 }

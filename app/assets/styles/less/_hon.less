@@ -1,3 +1,4 @@
+// min-width: 320px) smartphones, portrait iPhone, portrait 480x320 phones (Android)
 @media @mobile {
   .honeywell {
     color: #fff;
@@ -6,31 +7,37 @@
       display: none;
     }
     .logo {
-      picture {
-        img {
-          width: 50%;
-        }
-      }
+      background-image: url("/assets/images/honeywell/logo.svg");
+      background-size: cover;
+      width: 300px;
+      height: 100px; // really height: 200px;
+      background-position-y: -50px;
     }
   }
 }
+// min-width:480px) smartphones, Android phones, landscape iPhone
 @media @mobile-landscape {
   .honeywell {
   }
 }
+// min-width: 600px tablet portrait
 @media @tablet {
 }
+// min-width: 801px) tablet, landscape iPad, lo-res laptops ands desktops
 @media @tablet-landscape {
   .honeywell {
     background: url("/assets/images/honeywell/bg--medium.jpg");
   }
 }
+// min-width: 1025px) big landscape tablets, laptops, and desktops
 @media @laptop {
 }
+// min-width: 1200px) big landscape tablets, laptops, and desktops
 @media @desktop {
   .honeywell {
     background: url("/assets/images/honeywell/bg--large.jpg");
   }
 }
+// min-width: 2300px) TV
 @media @desktop-lg {
 }

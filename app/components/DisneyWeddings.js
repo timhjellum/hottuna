@@ -11,7 +11,7 @@ const disneyWeddingsHeroMedium = "../assets/images/disney-weddings/hero--medium.
 const disneyWeddingsHeroSmall = "../assets/images/disney-weddings/hero--small.jpg 360w"
 const disneyWeddingsHeroDefault = "../assets/images/disney-weddings/hero--default.jpg 320w"
 function DisneyWeddings(props) {
-  let alt = "Walt Disney Weddings"
+  let alt = "Disney Weddings"
   const { width } = useViewport()
   const breakpoint = 400
   return (

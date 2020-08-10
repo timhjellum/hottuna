@@ -1,11 +1,11 @@
 import React from "react"
 
-function DisneyWeddingsContent(props) {
+function DisneyWeddingsContent() {
   const disneyWeddingsHeroLarge = "../assets/images/disney-weddings/hero--large.jpg 540w"
   const disneyWeddingsHeroMedium = "../assets/images/disney-weddings/hero--medium.jpg 470w"
   const disneyWeddingsHeroSmall = "../assets/images/disney-weddings/hero--small.jpg 360w"
   const disneyWeddingsHeroDefault = "../assets/images/disney-weddings/hero--default.jpg 320w"
-  let alt = "Boston Market Website Redesign"
+  let alt = "Disney Weddings"
   return (
     <div className="wrapper">
       <div className="content">

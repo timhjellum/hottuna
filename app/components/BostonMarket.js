@@ -7,10 +7,6 @@ function BostonMarket(props) {
   const bostonMarketLogoLarge = "../assets/images/boston-market/logo--large.png 250w"
   const bostonMarketLogoSmall = "../assets/images/boston-market/logo--small.png 200w"
   const bostonMarketLogoDefault = "../assets/images/boston-market/logo--default.png 150w"
-  const bostonMarketHeroLarge = "../assets/images/boston-market/hero--large.jpg 540w"
-  const bostonMarketHeroMedium = "../assets/images/boston-market/hero--medium.jpg 470w"
-  const bostonMarketHeroSmall = "../assets/images/boston-market/hero--small.jpg 360w"
-  const bostonMarketHeroDefault = "../assets/images/boston-market/hero--default.jpg 320w"
   let alt = "Boston Market Website Redesign"
   const { width } = useViewport()
   const breakpoint = 400
@@ -26,26 +22,23 @@ function BostonMarket(props) {
         </div>
         <div className="text-content">
           <h1>{alt}</h1>
+          <h2 className="my-title">Lead Information Architect (IA) and User Experience (UX) Designer</h2>
+          <p className="dates">March 2009 - November 2009</p>
+          <p className="description">My responsibility on this project was to deliver wireframes, sitemaps, facilitate persona workshops, menu taxonomy, and assist with design mockups for the Boston Market website redesign.</p>
+          {/*
+		  <ul className="highlights">
+            <li>Lead requirement and Ideation, along with an extensive persona workshop, which produced highly detailed design artifacts.</li>
+            <li>Was able to capture the Disney Experience, a high level dream and explore, and detailed plan and initiate user paths.</li>
+            <li>Clients were extremely happy with the overall process and results.</li>
+          </ul>
+		  <p className="technologies"></p>
+		  <p className="tools"></p>
+		  */}
           <h2 className="subtitle">
             <a href="https://www.bostonmarket.com" target="_blank">
               bostonmarket.com
             </a>
           </h2>
-          <h3 className="dates">March 2009 - November 2009</h3>
-          <h2 className="my-title">Lead Information Architect (IA) and User Experience (UX) Designer</h2>
-          <p className="description"></p>
-          <div className="css_bar_graph">
-            <ul className="x_axis">
-              <li>Requirements</li>
-              <li>Sitemaps</li>
-              <li>Wireframes</li>
-              <li>Personas</li>
-              <li>Taxonomy</li>
-            </ul>
-            <div className="label">How I was utilized</div>
-          </div>
-          <p className="technologies"></p>
-          <p className="tools"></p>
         </div>
       </div>
       <div className="box-2">

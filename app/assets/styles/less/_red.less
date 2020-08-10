@@ -1,3 +1,4 @@
+// min-width: 320px) smartphones, portrait iPhone, portrait 480x320 phones (Android)
 @media @mobile {
   .red-robin {
     h1,
@@ -5,23 +6,27 @@
       display: none;
     }
     .logo {
-      picture {
-        img {
-          width: 50%;
-        }
-      }
+      background-image: url("/assets/images/red-robin/logo.svg");
+      background-size: cover;
+      width: 140px;
     }
   }
 }
+// min-width:480px) smartphones, Android phones, landscape iPhone
 @media @mobile-landscape {
 }
+// min-width: 600px tablet portrait
 @media @tablet {
 }
+// min-width: 801px) tablet, landscape iPad, lo-res laptops ands desktops
 @media @tablet-landscape {
 }
+// min-width: 1025px) big landscape tablets, laptops, and desktops
 @media @laptop {
 }
+// min-width: 1200px) big landscape tablets, laptops, and desktops
 @media @desktop {
 }
+// min-width: 2300px) TV
 @media @desktop-lg {
 }

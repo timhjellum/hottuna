@@ -1,39 +1,46 @@
+// min-width: 320px) smartphones, portrait iPhone, portrait 480x320 phones (Android)
 @media @mobile {
-  .severn-trent-services {
+  .severn-trent {
     color: #000;
     h1,
     .highlights {
       display: none;
     }
     .logo {
-      picture {
-        img {
-          width: 50%;
-        }
-      }
+      background-image: url("/assets/images/severn-trent/logo.svg");
+      background-size: cover;
+      width: 140px;
     }
-    background: url("/assets/images/severn-trent-services/bg--small.jpg") center bottom no-repeat;
+    background: url("/assets/images/severn-trent/bg--small.jpg") center bottom no-repeat;
   }
 }
+// min-width:480px) smartphones, Android phones, landscape iPhone
 @media @mobile-landscape {
 }
+// min-width: 600px tablet portrait
 @media @tablet {
 }
+// min-width: 801px) tablet, landscape iPad, lo-res laptops ands desktops
 @media @tablet-landscape {
 }
+// min-width: 1025px) big landscape tablets, laptops, and desktops
 @media @laptop {
 }
+// min-width: 1200px) big landscape tablets, laptops, and desktops
 @media @desktop {
 }
+// min-width: 2300px) TV
 @media @desktop-lg {
 }
+// min-width: 600px tablet portrait
 @media @tablet {
-  .severn-trent-services {
-    background: url("/assets/images/severn-trent-services/bg--medium.jpg") center bottom no-repeat;
+  .severn-trent {
+    background: url("/assets/images/severn-trent/bg--medium.jpg") center bottom no-repeat;
   }
 }
+// min-width: 1025px) big landscape tablets, laptops, and desktops
 @media @laptop {
-  .severn-trent-services {
-    background: url("/assets/images/severn-trent-services/bg--large.jpg") center bottom no-repeat;
+  .severn-trent {
+    background: url("/assets/images/severn-trent/bg--large.jpg") center bottom no-repeat;
   }
 }

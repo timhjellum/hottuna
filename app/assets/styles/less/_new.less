@@ -1,6 +1,8 @@
+// min-width: 320px) smartphones, portrait iPhone, portrait 480x320 phones (Android)
 @media @mobile {
   .newmont-mining {
-    color: darkblue;
+    background-image: url("/assets/images/newmont-mining/bg--default.jpg");
+    background-repeat: repeat;
     .subtitle {
       display: none;
     }
@@ -13,21 +15,34 @@
     }
   }
 }
+// min-width:480px) smartphones, Android phones, landscape iPhone
 @media @mobile-landscape {
   .newmont-mining {
+    background-image: url("/assets/images/newmont-mining/bg--small.jpg");
   }
 }
+// min-width: 600px tablet portrait
 @media @tablet {
+  .newmont-mining {
+    background-image: url("/assets/images/newmont-mining/bg--medium.jpg");
+  }
 }
+// min-width: 801px) tablet, landscape iPad, lo-res laptops ands desktops
 @media @tablet-landscape {
   .newmont-mining {
   }
 }
+// min-width: 1025px) big landscape tablets, laptops, and desktops
 @media @laptop {
+  .newmont-mining {
+    background-image: url("/assets/images/newmont-mining/bg--large.jpg");
+  }
 }
+// min-width: 1200px) big landscape tablets, laptops, and desktops
 @media @desktop {
   .newmont-mining {
   }
 }
+// min-width: 2300px) TV
 @media @desktop-lg {
 }

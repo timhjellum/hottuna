@@ -21,7 +21,7 @@ import OldChicago from "./components/OldChicago"
 import OrlandoMagic from "./components/OrlandoMagic"
 import RedRobin from "./components/RedRobin"
 import RockBottom from "./components/RockBottom"
-import SevernTrentServices from "./components/SevernTrentServices"
+import SevernTrent from "./components/SevernTrent"
 //import Templates from "./components/Templates"
 import Trip from "./components/Trip"
 import Visa from "./components/Visa"
@@ -214,7 +214,7 @@ class Main extends Component {
         <div name="mastercard" className="section mastercard">
           <Mastercard />
         </div>
-        <div name="molsoncoors" className="section molsoncoors">
+        <div name="molson-coors" className="section molson-coors">
           <MolsonCoors />
         </div>
         <div name="newmont-mining" className="section newmont-mining">
@@ -235,8 +235,8 @@ class Main extends Component {
         <div name="rock-bottom" className="section rock-bottom">
           <RockBottom />
         </div>
-        <div name="severn-trent-services" className="section">
-          <SevernTrentServices />
+        <div name="severn-trent" className="section">
+          <SevernTrent />
         </div>
         <div name="trip" className="section trip">
           <Trip />

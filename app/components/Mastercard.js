@@ -2,13 +2,7 @@ import React, { useEffect, useState } from "react"
 import Modal from "./Modal"
 import useViewport from "./useViewport"
 import MastercardContent from "./MastercardContent"
-const mastercardLogoLarge = "../assets/images/mastercard/logo--large.png 250w"
-const mastercardLogoSmall = "../assets/images/mastercard/logo--small.png 200w"
-const mastercardLogoDefault = "../assets/images/mastercard/logo--default.png 150w"
-const mastercardHeroLarge = "../assets/images/mastercard/hero--large.jpg 540w"
-const mastercardHeroMedium = "../assets/images/mastercard/hero--medium.jpg 470w"
-const mastercardHeroSmall = "../assets/images/mastercard/hero--small.jpg 360w"
-const mastercardHeroDefault = "../assets/images/mastercard/hero--default.jpg 320w"
+require("svg-url-loader!../assets/images/mastercard/logo.svg")
 function Mastercard(props) {
   let alt = "MasterCard"
   const { width } = useViewport()
@@ -16,13 +10,7 @@ function Mastercard(props) {
   return (
     <div className="wrapper">
       <div className="box-1">
-        <div className="logo">
-          <picture>
-            <source sizes="540px" srcSet={mastercardLogoLarge} media="(min-width: 1024px)" />
-            <source sizes="360px" srcSet={mastercardLogoSmall} media="(min-width: 800px)" />
-            <img srcSet={mastercardLogoDefault} alt={alt} />
-          </picture>
-        </div>
+        <div className="logo"></div>
         <div className="content">
           <h1>{alt}</h1>
           <h2 className="subtitle">Intranet</h2>

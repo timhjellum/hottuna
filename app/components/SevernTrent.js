@@ -1,28 +1,16 @@
 import React, { useEffect, useState } from "react"
 import Modal from "./Modal"
 import useViewport from "./useViewport"
-import SevernTrentServicesContent from "./SevernTrentServicesContent"
-const severnTrentServicesLogoLarge = "../assets/images/severn-trent-services/logo--large.png 250w"
-const severnTrentServicesLogoSmall = "../assets/images/severn-trent-services/logo--small.png 200w"
-const severnTrentServicesLogoDefault = "../assets/images/severn-trent-services/logo--default.png 150w"
-const severnTrentServicesHeroLarge = "../assets/images/severn-trent-services/hero--large.jpg 540w"
-const severnTrentServicesHeroMedium = "../assets/images/severn-trent-services/hero--medium.jpg 470w"
-const severnTrentServicesHeroSmall = "../assets/images/severn-trent-services/hero--small.jpg 360w"
-const severnTrentServicesHeroDefault = "../assets/images/severn-trent-services/hero--default.jpg 320w"
-function SevernTrentServices(props) {
-  let alt = "Severn Trent Services"
+import SevernTrentContent from "./SevernTrentContent"
+require("svg-url-loader!../assets/images/severn-trent/logo.svg")
+function SevernTrent(props) {
+  let alt = "Severn Trent"
   const { width } = useViewport()
   const breakpoint = 400
   return (
     <div className="wrapper">
       <div className="box-1">
-        <div className="logo">
-          <picture>
-            <source sizes="540px" srcSet={severnTrentServicesLogoLarge} media="(min-width: 1024px)" />
-            <source sizes="360px" srcSet={severnTrentServicesLogoSmall} media="(min-width: 800px)" />
-            <img srcSet={severnTrentServicesLogoDefault} alt={alt} />
-          </picture>
-        </div>
+        <div className="logo"></div>
         <div className="text-content">
           <h1>{alt}</h1>
           <h2 className="subtitle">Intranet</h2>
@@ -43,14 +31,14 @@ function SevernTrentServices(props) {
       <div className="box-2">
         {width < breakpoint ? (
           <Modal>
-            <SevernTrentServicesContent />
+            <SevernTrentContent />
           </Modal>
         ) : (
-          <SevernTrentServicesContent />
+          <SevernTrentContent />
         )}
       </div>
     </div>
   )
 }
 
-export default SevernTrentServices
+export default SevernTrent

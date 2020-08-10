@@ -1,9 +1,20 @@
+// min-width: 320px) smartphones, portrait iPhone, portrait 480x320 phones (Android)
 @media @mobile {
   .boston-market {
     background: url("/assets/images/boston-market/bg--tile.jpg");
     color: #fff;
     h1 {
       display: none;
+    }
+    .my-title {
+      color: #d02027;
+    }
+    a {
+      color: #d02027;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
     }
     color: black;
     .box-1 {
@@ -12,46 +23,52 @@
           max-width: 50%;
         }
       }
-      //img {
-      //max-width: 100%;
-      //height: auto;
-      //}
     }
     .box-2 {
-      //background-image: url("/assets/images/boston-market/hero--default.jpg");
-      //background-size: cover;
+      .wrapper {
+        //.content {
+        background: url("/assets/images/boston-market/hero--medium.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        //}
+      }
     }
   }
 }
+// min-width:480px) smartphones, Android phones, landscape iPhone
 @media @mobile-landscape {
   .boston-market {
-    .box-1 {
-      width: 45%;
-    }
+    // temporary
     .box-2 {
-      width: 45%;
-      float: right;
-      //background-image: url("/assets/images/boston-market/hero--small.jpg");
+      .wrapper {
+        background: url("/assets/images/boston-market/hero--x-large.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
     }
   }
 }
+// min-width: 600px tablet portrait
 @media @tablet {
 }
+// min-width: 801px) tablet, landscape iPad, lo-res laptops ands desktops
 @media @tablet-landscape {
-  .boston-market {
-    .box-2 {
-      //background-image: url("/assets/images/boston-market/hero--medium.jpg");
-    }
-  }
 }
+// min-width: 1025px) big landscape tablets, laptops, and desktops
 @media @laptop {
 }
+// min-width: 1200px) big landscape tablets, laptops, and desktops
 @media @desktop {
+}
+// min-width: 2300px) TV
+@media @desktop-lg {
   .boston-market {
     .box-2 {
-      //background-image: url("/assets/images/boston-market/hero--large.jpg");
+      .wrapper {
+        background: url("/assets/images/boston-market/hero--x-large.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
     }
   }
-}
-@media @desktop-lg {
 }
