@@ -31,8 +31,11 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|j?g|gif)?$/,
-        use: "file-loader"
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: "file-loader",
+        options: {
+          publicPath: "./images/**"
+        }
       },
       {
         test: /\.svg/,
