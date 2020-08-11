@@ -1,6 +1,17 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const path = require("path")
+const fse = require("fs-extra")
+
+class RunAfterCompile {
+  apply(compiler) {
+    compiler.hooks.done.tap("Copy images", function () {
+      fse.copySync("./app/assets/images", "./dist/assets/images")
+    })
+  }
+}
+
 module.exports = {
   mode: "production",
   devtool: "source-map",
@@ -30,18 +41,22 @@ module.exports = {
           }
         }
       },
-      {
+      /*
+	  {
         test: /\.(png|jpe?g|gif)$/i,
         loader: "file-loader",
         options: {
-          publicPath: "/"
+          publicPath: "/public/images/"
         }
-      },
+	  },
+	  */
       {
         test: /\.svg/,
         use: {
           loader: "svg-url-loader",
-          options: {}
+          options: {
+            publicPath: "/public/images/"
+          }
         }
       },
       {
@@ -55,11 +70,13 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
       filename: "index.html",
       inject: true,
       template: path.resolve(__dirname, "public", "index.html")
     }),
-    new MiniCssExtractPlugin({ filename: "styles.[chunkhash].css" })
+    new MiniCssExtractPlugin({ filename: "styles.[chunkhash].css" }),
+    new RunAfterCompile()
   ]
 }
