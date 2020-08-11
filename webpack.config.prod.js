@@ -42,21 +42,8 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/i,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: "/public/"
-            }
-          },
-          "css-loader",
-          "less-loader"
-        ]
-      },
-      {
-        test: /\.less$/,
-        use: "less-loader"
+        test: /\.(less)$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "less-loader"]
       }
     ]
   },
