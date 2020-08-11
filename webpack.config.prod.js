@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const path = require("path")
 module.exports = {
   mode: "production",
@@ -45,7 +46,8 @@ module.exports = {
         use: [
           "css-loader",
           {
-            loader: "less-loader"
+            loader: "less-loader",
+            options: { plugins: MiniCssExtractPlugin }
           }
         ]
       },
@@ -60,6 +62,7 @@ module.exports = {
       filename: "index.html",
       inject: true,
       template: path.resolve(__dirname, "public", "index.html")
-    })
+    }),
+    new MiniCssExtractPlugin({ filename: "styles.[chunkhash].css" })
   ]
 }
