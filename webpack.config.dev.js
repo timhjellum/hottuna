@@ -2,7 +2,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin")
 const path = require("path")
 
 module.exports = {
-  entry: "./app/Main.js",
+  entry: "./app/App.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js"
@@ -32,7 +32,13 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-react", ["@babel/preset-env", { targets: { node: "12" } }]]
+            presets: [
+              "@babel/preset-env",
+              "@babel/react",
+              {
+                plugins: ["@babel/plugin-proposal-class-properties"]
+              }
+            ]
           }
         }
       },

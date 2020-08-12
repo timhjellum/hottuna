@@ -14,33 +14,35 @@ function Trip(props) {
   const { width } = useViewport()
   const breakpoint = 400
   return (
-    <div className="wrapper">
-      <div className="box-1">
-        <div className="logo">
-          <picture>
-            <source sizes="540px" srcSet={tripLogoLarge} media="(min-width: 1024px)" />
-            <source sizes="360px" srcSet={tripLogoSmall} media="(min-width: 800px)" />
-            <img srcSet={tripLogoDefault} alt={alt} />
-          </picture>
+    <div name="trip" className="section trip">
+      <div className="wrapper">
+        <div className="box-1">
+          <div className="logo">
+            <picture>
+              <source sizes="540px" srcSet={tripLogoLarge} media="(min-width: 1024px)" />
+              <source sizes="360px" srcSet={tripLogoSmall} media="(min-width: 800px)" />
+              <img srcSet={tripLogoDefault} alt={alt} />
+            </picture>
+          </div>
+          <div className="text-content">
+            <h1>{alt}</h1>
+            <h2 className="subtitle">
+              <a href="http://www.avis.com">Avis</a>, <a href="http://www.budget.com">Budget Rent A Car</a>, AmeriHost Inn, <a href="http://www.baymontinns.com">Baymont Inn &amp; Suites</a>, <a href="http://www.daysinn.com">Days Inn</a>, <a href="http://www.hojo.com">Howard Johnson</a>, <a href="http://www.knightsinn.com">Knights Inn</a>, <a href="http://www.ramada.com">Ramada</a>, <a href="http://www.super8.com/&am">Super 8 Worldwide</a>, <a href="http://www.travelodge.com">Travelodge</a>, <a href="http://www.wingatehotels.com">Wingate Inns</a>, <a href="http://www.wyndham.com">Wyndham Hotels &amp; Resorts</a>, <a href="http://www.trip.com">Trip.com</a>, <a href="http://www.cheaptickets.com">CheapTickets.com</a> (then Orbits and now Travelocity) and <a href="http://www.lodging.com">Lodging.com</a>
+            </h2>
+            <h3 className="dates">xxx 2015 â€“ xxx 2016</h3>
+            <h2 className="my-title">Lead Information Architect (IA) and User Experience (UX) Designer</h2>
+            <p className="description">Responsible for the overall branding and user-interface implementation of: Avis, Budget Rent A Car, AmeriHost Inn, Baymont Inn &#38; Suites, Days Inn, Howard Johnson, Knights Inn, Ramada, Super 8 Worldwide, Travelodge, Wingate Inns, Wyndham Hotels &#38; Resorts, Trip.com, CheapTickets.com and Lodging.com.</p>
+          </div>
         </div>
-        <div className="text-content">
-          <h1>{alt}</h1>
-          <h2 className="subtitle">
-            <a href="http://www.avis.com">Avis</a>, <a href="http://www.budget.com">Budget Rent A Car</a>, AmeriHost Inn, <a href="http://www.baymontinns.com">Baymont Inn &amp; Suites</a>, <a href="http://www.daysinn.com">Days Inn</a>, <a href="http://www.hojo.com">Howard Johnson</a>, <a href="http://www.knightsinn.com">Knights Inn</a>, <a href="http://www.ramada.com">Ramada</a>, <a href="http://www.super8.com/&am">Super 8 Worldwide</a>, <a href="http://www.travelodge.com">Travelodge</a>, <a href="http://www.wingatehotels.com">Wingate Inns</a>, <a href="http://www.wyndham.com">Wyndham Hotels &amp; Resorts</a>, <a href="http://www.trip.com">Trip.com</a>, <a href="http://www.cheaptickets.com">CheapTickets.com</a> (then Orbits and now Travelocity) and <a href="http://www.lodging.com">Lodging.com</a>
-          </h2>
-          <h3 className="dates">xxx 2015 â€“ xxx 2016</h3>
-          <h2 className="my-title">Lead Information Architect (IA) and User Experience (UX) Designer</h2>
-          <p className="description">Responsible for the overall branding and user-interface implementation of: Avis, Budget Rent A Car, AmeriHost Inn, Baymont Inn &#38; Suites, Days Inn, Howard Johnson, Knights Inn, Ramada, Super 8 Worldwide, Travelodge, Wingate Inns, Wyndham Hotels &#38; Resorts, Trip.com, CheapTickets.com and Lodging.com.</p>
-        </div>
-      </div>
-      <div className="box-2">
-        {width < breakpoint ? (
-          <Modal>
+        <div className="box-2">
+          {width < breakpoint ? (
+            <Modal>
+              <TripContent />
+            </Modal>
+          ) : (
             <TripContent />
-          </Modal>
-        ) : (
-          <TripContent />
-        )}
+          )}
+        </div>
       </div>
     </div>
   )

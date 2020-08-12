@@ -15,7 +15,7 @@ class RunAfterCompile {
 module.exports = {
   mode: "production",
   devtool: "source-map",
-  entry: "./app/Main.js",
+  entry: "./app/App.js",
 
   output: {
     path: path.resolve(__dirname, "dist"),

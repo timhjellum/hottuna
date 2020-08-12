@@ -14,39 +14,41 @@ function RockBottom(props) {
   const { width } = useViewport()
   const breakpoint = 400
   return (
-    <div className="wrapper">
-      <div className="box-1">
-        <div className="logo">
-          <picture>
-            <source sizes="540px" srcSet={rockBottomLogoLarge} media="(min-width: 1024px)" />
-            <source sizes="360px" srcSet={rockBottomLogoSmall} media="(min-width: 800px)" />
-            <img srcSet={rockBottomLogoDefault} alt={alt} />
-          </picture>
-        </div>
-        <div className="text-content">
-          <h1>{alt}</h1>
-          <h2 className="subtitle">Intranet &#38; Extranet</h2>
-          <h3 className="dates">September 2010 â€“ June 2011</h3>
-          <h2 className="my-title">Lead User Experience (UX) Designer, Interactive Designer (ID) &#38; User Interface (UI) Developer</h2>
-          <p className="description"></p>
-          <div className="css_bar_graph">
-            <ul className="x_axis">
-              <li>Ideation</li>
-              <li>Sitemaps</li>
-              <li>Wireframes</li>
-            </ul>
-            <div className="label">How I was utilized</div>
+    <div name="rock-bottom" className="section rock-bottom">
+      <div className="wrapper">
+        <div className="box-1">
+          <div className="logo">
+            <picture>
+              <source sizes="540px" srcSet={rockBottomLogoLarge} media="(min-width: 1024px)" />
+              <source sizes="360px" srcSet={rockBottomLogoSmall} media="(min-width: 800px)" />
+              <img srcSet={rockBottomLogoDefault} alt={alt} />
+            </picture>
+          </div>
+          <div className="text-content">
+            <h1>{alt}</h1>
+            <h2 className="subtitle">Intranet &#38; Extranet</h2>
+            <h3 className="dates">September 2010 â€“ June 2011</h3>
+            <h2 className="my-title">Lead User Experience (UX) Designer, Interactive Designer (ID) &#38; User Interface (UI) Developer</h2>
+            <p className="description"></p>
+            <div className="css_bar_graph">
+              <ul className="x_axis">
+                <li>Ideation</li>
+                <li>Sitemaps</li>
+                <li>Wireframes</li>
+              </ul>
+              <div className="label">How I was utilized</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="box-2">
-        {width < breakpoint ? (
-          <Modal>
+        <div className="box-2">
+          {width < breakpoint ? (
+            <Modal>
+              <RockBottomContent />
+            </Modal>
+          ) : (
             <RockBottomContent />
-          </Modal>
-        ) : (
-          <RockBottomContent />
-        )}
+          )}
+        </div>
       </div>
     </div>
   )

@@ -11,21 +11,22 @@ function BostonMarket(props) {
   const { width } = useViewport()
   const breakpoint = 400
   return (
-    <div className="wrapper">
-      <div className="box-1">
-        <div className="logo">
-          <picture>
-            <source sizes="250px" srcSet={bostonMarketLogoLarge} media="(min-width: 1024px)" />
-            <source sizes="200px" srcSet={bostonMarketLogoSmall} media="(min-width: 800px)" />
-            <img srcSet={bostonMarketLogoDefault} alt={alt} />
-          </picture>
-        </div>
-        <div className="text-content">
-          <h1>{alt}</h1>
-          <h2 className="my-title">Lead Information Architect (IA) and User Experience (UX) Designer</h2>
-          <p className="dates">March 2009 - November 2009</p>
-          <p className="description">My responsibility on this project was to deliver wireframes, sitemaps, facilitate persona workshops, menu taxonomy, and assist with design mockups for the Boston Market website redesign.</p>
-          {/*
+    <div name="boston-market" className="boston-market section">
+      <div className="wrapper">
+        <div className="box-1">
+          <div className="logo">
+            <picture>
+              <source sizes="250px" srcSet={bostonMarketLogoLarge} media="(min-width: 1024px)" />
+              <source sizes="200px" srcSet={bostonMarketLogoSmall} media="(min-width: 800px)" />
+              <img srcSet={bostonMarketLogoDefault} alt={alt} />
+            </picture>
+          </div>
+          <div className="text-content">
+            <h1>{alt}</h1>
+            <h2 className="my-title">Lead Information Architect (IA) and User Experience (UX) Designer</h2>
+            <p className="dates">March 2009 - November 2009</p>
+            <p className="description">My responsibility on this project was to deliver wireframes, sitemaps, facilitate persona workshops, menu taxonomy, and assist with design mockups for the Boston Market website redesign.</p>
+            {/*
 		  <ul className="highlights">
             <li>Lead requirement and Ideation, along with an extensive persona workshop, which produced highly detailed design artifacts.</li>
             <li>Was able to capture the Disney Experience, a high level dream and explore, and detailed plan and initiate user paths.</li>
@@ -34,21 +35,22 @@ function BostonMarket(props) {
 		  <p className="technologies"></p>
 		  <p className="tools"></p>
 		  */}
-          <h2 className="subtitle">
-            <a href="https://www.bostonmarket.com" target="_blank">
-              bostonmarket.com
-            </a>
-          </h2>
+            <h2 className="subtitle">
+              <a href="https://www.bostonmarket.com" target="_blank">
+                bostonmarket.com
+              </a>
+            </h2>
+          </div>
         </div>
-      </div>
-      <div className="box-2">
-        {width < breakpoint ? (
-          <Modal>
+        <div className="box-2">
+          {width < breakpoint ? (
+            <Modal>
+              <BostonMarketContent />
+            </Modal>
+          ) : (
             <BostonMarketContent />
-          </Modal>
-        ) : (
-          <BostonMarketContent />
-        )}
+          )}
+        </div>
       </div>
     </div>
   )
