@@ -5,7 +5,7 @@ function DisneyMapsContent(props) {
   const disneyMapsHeroMedium = "../assets/images/disney-maps/hero--medium.jpg 470w"
   const disneyMapsHeroSmall = "../assets/images/disney-maps/hero--small.jpg 360w"
   const disneyMapsHeroDefault = "../assets/images/disney-maps/hero--default.jpg 320w"
-  let alt = "Boston Market Website Redesign"
+  let alt = "Disney Maps"
   return (
     <div className="wrapper">
       <div className="content">

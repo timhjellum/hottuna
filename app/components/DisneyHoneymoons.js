@@ -15,50 +15,52 @@ function DisneyHoneymoons(props) {
   const { width } = useViewport()
   const breakpoint = 400
   return (
-    <div className="wrapper" id="DisneyHoneymoons">
-      <div className="box-1">
-        <div className="logo">
-          <picture>
-            <source sizes="540px" srcSet={disneyHoneymoonsLogoLarge} media="(min-width: 1024px)" />
-            <source sizes="360px" srcSet={disneyHoneymoonsLogoSmall} media="(min-width: 800px)" />
-            <img srcSet={disneyHoneymoonsLogoDefault} alt={alt} />
-          </picture>
+    <div className="disney-honeymoons">
+      <div className="wrapper">
+        <div className="box-1">
+          <div className="logo">
+            <picture>
+              <source sizes="540px" srcSet={disneyHoneymoonsLogoLarge} media="(min-width: 1024px)" />
+              <source sizes="360px" srcSet={disneyHoneymoonsLogoSmall} media="(min-width: 800px)" />
+              <img srcSet={disneyHoneymoonsLogoDefault} alt={alt} />
+            </picture>
+          </div>
+          <div className="content">
+            <h1>{alt}</h1>
+            <h2 className="subtitle">
+              <a href="http://disneyweddings.disney.go.com/honeymoons" target="_blank">
+                disneyhoneymoons.com
+              </a>
+            </h2>
+            <h3 className="dates">September 2007 - January 2009</h3>
+            <h2 className="subtitle">
+              <a href="https://www.disneyweddings.com/" target="_blank">
+                disneyweddings.com
+              </a>
+            </h2>
+            <h3 className="dates">September 2007 â€“ January 2009</h3>
+            <h2 className="my-title">Lead Information Architect (IA) & User Experience (UX) Designer</h2>
+            <p className="description"></p>
+            <ul className="highlights">
+              <li>Lead requirement and Ideation, along with an extensive persona workshop, which produced highly detailed design artifacts.</li>
+              <li>Was able to capture the Disney Experience, a high level dream and explore, and detailed plan and initiate user paths.</li>
+              <li>Clients were extremely happy with the overall process and results.</li>
+            </ul>
+            <p className="technologies"></p>
+            <p className="tools"></p>
+          </div>
         </div>
-        <div className="content">
-          <h1>{alt}</h1>
-          <h2 className="subtitle">
-            <a href="http://disneyweddings.disney.go.com/honeymoons" target="_blank">
-              disneyhoneymoons.com
-            </a>
-          </h2>
-          <h3 className="dates">September 2007 - January 2009</h3>
-          <h2 className="subtitle">
-            <a href="https://www.disneyweddings.com/" target="_blank">
-              disneyweddings.com
-            </a>
-          </h2>
-          <h3 className="dates">September 2007 â€“ January 2009</h3>
-          <h2 className="my-title">Lead Information Architect (IA) & User Experience (UX) Designer</h2>
-          <p className="description"></p>
-          <ul className="highlights">
-            <li>Lead requirement and Ideation, along with an extensive persona workshop, which produced highly detailed design artifacts.</li>
-            <li>Was able to capture the Disney Experience, a high level dream and explore, and detailed plan and initiate user paths.</li>
-            <li>Clients were extremely happy with the overall process and results.</li>
-          </ul>
-          <p className="technologies"></p>
-          <p className="tools"></p>
-        </div>
-      </div>
-      <div className="box-2">
-        {width < breakpoint ? (
-          <Modal>
+        <div className="box-2">
+          {width < breakpoint ? (
+            <Modal>
+              <DisneyHoneymoonsContent />
+            </Modal>
+          ) : (
             <DisneyHoneymoonsContent />
-          </Modal>
-        ) : (
-          <DisneyHoneymoonsContent />
-        )}
+          )}
+        </div>
+        <DisneyNav />
       </div>
-      <DisneyNav />
     </div>
   )
 }

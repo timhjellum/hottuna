@@ -7,7 +7,10 @@ import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, 
 import BlackAndVeatch from "./components/BlackAndVeatch"
 import BostonMarket from "./components/BostonMarket"
 import Diginext from "./components/Diginext"
-import Disney from "./components/Disney"
+import DisneyWeddings from "./components/DisneyWeddings"
+import DisneyMeetings from "./components/DisneyMeetings"
+import DisneyHoneymoons from "./components/DisneyHoneymoons"
+import DisneyMaps from "./components/DisneyMaps"
 import EducationDevelopmentCenter from "./components/EducationDevelopmentCenter"
 import EpiscopalChurch from "./components/EpiscopalChurch"
 import Fastsigns from "./components/Fastsigns"
@@ -22,7 +25,7 @@ import OrlandoMagic from "./components/OrlandoMagic"
 import RedRobin from "./components/RedRobin"
 import RockBottom from "./components/RockBottom"
 import SevernTrent from "./components/SevernTrent"
-//import Templates from "./components/Templates"
+import SharePoint from "./components/SharePoint"
 import Trip from "./components/Trip"
 import Visa from "./components/Visa"
 import VeterinariansPetInsurance from "./components/VeterinariansPetInsurance"
@@ -31,7 +34,9 @@ import WyomingWorkforceServices from "./components/WyomingWorkforceServices"
 import { PageSlider } from "page-slider-react"
 import ReactPageScroller from "react-page-scroller"
 import { Pager } from "react-bootstrap"
+import Modal from "react-modal"
 
+Modal.setAppElement("#app")
 import "./assets/styles/styles.css"
 
 class App extends Component {
@@ -63,31 +68,8 @@ class App extends Component {
     return [...pageNumbers]
   }
   render() {
-    const compList = [
-      <BlackAndVeatch />,
-      <EducationDevelopmentCenter />,
-      <Honeywell />,
-      <InternationalMonetoryFund />,
-      <Mastercard />,
-      <MolsonCoors />,
-      <NewmontMining />,
-      <Novartis />,
-      <Visa />,
-      <VeterinariansPetInsurance />,
-      <WyomingWorkforceServices />,
-      <OrlandoMagic />,
-      <SevernTrent /> // Functional Component
-      // React Node
-      /*
-	  () => BlackAndVeatch, // Function that returns Functional Component
-      async () => {
-        // Asynchronous function that returns Functional Component
-        await new Promise(resolve => setTimeout(resolve, 2000))
-        return BlackAndVeatch
-      },
-	  () => import("./components/BlackAndVeatch") // Dynamic Import
-	  */
-    ]
+    const sharePoint = [<SharePoint />, <BlackAndVeatch />, <EducationDevelopmentCenter />, <Honeywell />, <InternationalMonetoryFund />, <Mastercard />, <MolsonCoors />, <NewmontMining />, <Novartis />, <Visa />, <VeterinariansPetInsurance />, <WyomingWorkforceServices />, <OrlandoMagic />, <SevernTrent />]
+    const disney = [<DisneyWeddings />, <DisneyHoneymoons />, <DisneyMeetings />, <DisneyMaps />]
     const pagesNumbers = this.getPagesNumbers()
     return (
       <React.Fragment>
@@ -95,7 +77,27 @@ class App extends Component {
           <BostonMarket className="boston-market section" />
           <Diginext className="diginext section" />
           <PageSlider
-            compList={compList}
+            compList={disney}
+            horizontal={true}
+            actionFlagTime={500}
+            sensitivity={100}
+            navigation={{
+              type: "bottom", //  type: Specify locate of navigation bar. Enter either top, right, bottom, left, or none. If you type none, the navigation bar is not visible. Default value is none.
+              hide: false, // hide: Make the navigation bar invisible when not in use. Default value is false.
+              timer: 2000, // timer: Set the time navigation bar is displayed when the hide is true. The unit is milliseconds. Default value is 2000.
+              size: 16, // size: Specify the size of navigation bar. Style unit is internally used em, navigation bar is resized to match the changes of this value. Default value is 16.
+              unit: "px" // unit: It is a unit of size. Enter either px, em, rem, vh, vw or '%'. Default value is px.
+            }}
+            className={disney}
+          />
+          <EpiscopalChurch className="episcopal-church section" />
+          <Fastsigns className="fastsigns section" />
+          <OldChicago className="old-chicago section" />
+          <RedRobin className="red-robin section" />
+          <RockBottom className="rock-bottom section" />
+          <Trip className="trip section" />
+          <PageSlider
+            compList={sharePoint}
             horizontal={true}
             actionFlagTime={500}
             sensitivity={100}
@@ -108,12 +110,6 @@ class App extends Component {
             }}
             className="sharepoint section"
           />
-          <EpiscopalChurch className="episcopal-church section" />
-          <Fastsigns className="fastsigns section" />
-          <OldChicago className="old-chicago section" />
-          <RedRobin className="red-robin section" />
-          <RockBottom className="rock-bottom section" />
-          <Trip className="trip section" />
         </ReactPageScroller>
         <Pager className="pagination-additional-class" bsSize="large">
           {pagesNumbers}

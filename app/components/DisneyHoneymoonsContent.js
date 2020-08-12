@@ -5,7 +5,7 @@ function DisneyHoneymoonsContent(props) {
   const disneyHoneymoonsHeroMedium = "../assets/images/disney-honeymoons/hero--medium.jpg 470w"
   const disneyHoneymoonsHeroSmall = "../assets/images/disney-honeymoons/hero--small.jpg 360w"
   const disneyHoneymoonsHeroDefault = "../assets/images/disney-honeymoons/hero--default.jpg 320w"
-  let alt = "Boston Market Website Redesign"
+  let alt = "Disney Honeymoons"
   return (
     <div className="wrapper">
       <div className="content">

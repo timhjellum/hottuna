@@ -15,44 +15,46 @@ function DisneyMeetings(props) {
   const { width } = useViewport()
   const breakpoint = 400
   return (
-    <div className="wrapper" id="DisneyMeetings">
-      <div className="box-1">
-        <div className="logo">
-          <picture>
-            <source sizes="540px" srcSet={disneyMeetingsLogoLarge} media="(min-width: 1024px)" />
-            <source sizes="360px" srcSet={disneyMeetingsLogoSmall} media="(min-width: 800px)" />
-            <img srcSet={disneyMeetingsLogoDefault} alt={alt} />
-          </picture>
+    <div className="disney-meetings">
+      <div className="wrapper">
+        <div className="box-1">
+          <div className="logo">
+            <picture>
+              <source sizes="540px" srcSet={disneyMeetingsLogoLarge} media="(min-width: 1024px)" />
+              <source sizes="360px" srcSet={disneyMeetingsLogoSmall} media="(min-width: 800px)" />
+              <img srcSet={disneyMeetingsLogoDefault} alt={alt} />
+            </picture>
+          </div>
+          <div className="content">
+            <h1>{alt}</h1>
+            <h2 className="subtitle">
+              <a href="https://www.disneymeetings.com" target="_blank">
+                disneymeetings.com
+              </a>
+            </h2>
+            <h3 className="dates">September 2007 â€“ January 2009</h3>
+            <h2 className="my-title">Lead Information Architect (IA) & User Experience (UX) Designer</h2>
+            <p className="description"></p>
+            <ul className="highlights">
+              <li>Lead requirement and Ideation, along with an extensive persona workshop, which produced highly detailed design artifacts.</li>
+              <li>Was able to capture the Disney Experience, a high level dream and explore, and detailed plan and initiate user paths.</li>
+              <li>Clients were extremely happy with the overall process and results.</li>
+            </ul>
+            <p className="technologies"></p>
+            <p className="tools"></p>
+          </div>
         </div>
-        <div className="content">
-          <h1>{alt}</h1>
-          <h2 className="subtitle">
-            <a href="https://www.disneymeetings.com" target="_blank">
-              disneymeetings.com
-            </a>
-          </h2>
-          <h3 className="dates">September 2007 â€“ January 2009</h3>
-          <h2 className="my-title">Lead Information Architect (IA) & User Experience (UX) Designer</h2>
-          <p className="description"></p>
-          <ul className="highlights">
-            <li>Lead requirement and Ideation, along with an extensive persona workshop, which produced highly detailed design artifacts.</li>
-            <li>Was able to capture the Disney Experience, a high level dream and explore, and detailed plan and initiate user paths.</li>
-            <li>Clients were extremely happy with the overall process and results.</li>
-          </ul>
-          <p className="technologies"></p>
-          <p className="tools"></p>
-        </div>
-      </div>
-      <div className="box-2">
-        {width < breakpoint ? (
-          <Modal>
+        <div className="box-2">
+          {width < breakpoint ? (
+            <Modal>
+              <DisneyMeetingsContent />
+            </Modal>
+          ) : (
             <DisneyMeetingsContent />
-          </Modal>
-        ) : (
-          <DisneyMeetingsContent />
-        )}
+          )}
+        </div>
+        <DisneyNav />
       </div>
-      <DisneyNav />
     </div>
   )
 }

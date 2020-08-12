@@ -21,12 +21,23 @@ body {
 }
 // min-width: 320px) smartphones, portrait iPhone, portrait 480x320 phones (Android)
 @media @mobile {
-  /*
-  .page-wrapper {
-    height: 100vh;
-    width: 100%;
+  .page-slider {
+    padding-left: 0;
+    //margin: @line-height-computed 0;
+    list-style: none;
+    text-align: center;
+    &:extend(.clearfix all);
+    .page-slider-nav {
+      .nav-button {
+        width: 1em;
+        height: 1em;
+      }
+    }
+    &:first-child {
+      background: #d4e6e8 url("/assets/images/disney-weddings/bg--large.jpg") right top;
+      background-size: cover;
+    }
   }
-  */
   .wrapper {
     width: 96%;
     margin: 0 2%;
@@ -92,6 +103,14 @@ body {
 }
 // min-width: 1025px) big landscape tablets, laptops, and desktops
 @media @laptop {
+  .page-slider {
+    .page-slider-nav {
+      .nav-button {
+        width: 2em;
+        height: 2em;
+      }
+    }
+  }
   .wrapper {
     width: 90%;
     margin: 0 5%;
@@ -99,6 +118,14 @@ body {
 }
 // min-width: 1200px) big landscape tablets, laptops, and desktops
 @media @desktop {
+  .page-slider {
+    .page-slider-nav {
+      .nav-button {
+        width: 3em;
+        height: 3em;
+      }
+    }
+  }
 }
 // min-width: 2300px) TV
 @media @desktop-lg {

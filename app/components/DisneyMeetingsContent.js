@@ -5,7 +5,7 @@ function DisneyMeetingsContent(props) {
   const disneyMeetingsHeroMedium = "../assets/images/disney-meetings/hero--medium.jpg 470w"
   const disneyMeetingsHeroSmall = "../assets/images/disney-meetings/hero--small.jpg 360w"
   const disneyMeetingsHeroDefault = "../assets/images/disney-meetings/hero--default.jpg 320w"
-  let alt = "Boston Market Website Redesign"
+  let alt = "Disney Meetings"
   return (
     <div className="wrapper">
       <div className="content">
